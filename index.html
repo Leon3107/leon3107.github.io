@@ -36,25 +36,27 @@
   <body>
         <div>
           <header>
-            <h1 class="u-text u-text-default u-text-1">Aquarium</h1>
+            <h1 class="u-text u-text-default u-text-1">Soraya & Leon</h1>
           </header>
           <img height=64></img>
           <p>
-            <span id="months" class="values">24.63</span>
+            <span id="months" class="values">0</span>
             <span class="units">Monate</span> 
           </p>
           <p>
-            <span id="days" class="values">24.63</span>
+            <span id="days" class="values">0/span>
             <span class="units">Tage</span> 
           </p>
         </div> 
 	</table>
 	<script>
 	function updateTime(){
+		const startDate = new Date('2023-09-01');
 		var date = new Date();
-		document.getElementById("months").innerHTML = date;
+		const monthsDiff = (currentDate.getFullYear() - startDate.getFullYear()) * 12 + (currentDate.getMonth() - startDate.getMonth());
+		document.getElementById("months").innerHTML = monthsDiff;
 	}
-	setInterval(updateTime, 1000);
+	setInterval(updateTime, 500);
 	</script>
 </body>
 </html>
