@@ -50,8 +50,11 @@
         </div> 
 	</table>
 	<script>
+	function updateTime(){
 		var date = new Date();
 		document.getElementById("months").innerHTML = date;
+	}
+	setInterval(updateTime, 1000);
 	</script>
 </body>
 </html>
