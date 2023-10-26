@@ -62,6 +62,9 @@
         </div> 
 	</table>
 	<script>
+	function formatNumberWithCommas(number) {
+		return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+	}
 	function updateTime(){
 		const startDate = new Date('2023-09-01');
 		var currentDate = new Date();
@@ -83,11 +86,11 @@
 		// Konvertiere die Differenz in Sekunden
 		const secDiff = Math.floor(timeDiff / (1000));
 		
-		document.getElementById("months").innerHTML = monthsDiff;
-		document.getElementById("days").innerHTML = daysDiff;
-		document.getElementById("hours").innerHTML = hourDiff;
-		document.getElementById("minutes").innerHTML = minDiff;
-		document.getElementById("seconds").innerHTML = secDiff;
+		document.getElementById("months").innerHTML = formatNumberWithCommas(monthsDiff);
+		document.getElementById("days").innerHTML = formatNumberWithCommas(daysDiff);
+		document.getElementById("hours").innerHTML = formatNumberWithCommas(hourDiff);
+		document.getElementById("minutes").innerHTML = formatNumberWithCommas(minDiff);
+		document.getElementById("seconds").innerHTML = formatNumberWithCommas(secDiff);
 	}
 	updateTime();
 	setInterval(updateTime, 500);
