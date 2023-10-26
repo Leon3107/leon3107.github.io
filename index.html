@@ -44,6 +44,10 @@
             <span class="units">Monate</span> 
           </p>
           <p>
+            <span id="weeks" class="values">0</span>
+            <span class="units">Wochen</span> 
+          </p>
+          <p>
             <span id="days" class="values">0</span>
             <span class="units">Tage</span> 
           </p>
@@ -74,6 +78,9 @@
 		//differenz in ms
 		const timeDiff = currentDate - startDate;
 
+		// Konvertiere die Differenz in Wochen
+		const weeksDiff = Math.floor(timeDiff / (1000 * 60 * 60 * 24 * 7));
+		
 		// Konvertiere die Differenz in Tage
 		const daysDiff = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
 		
@@ -87,6 +94,7 @@
 		const secDiff = Math.floor(timeDiff / (1000));
 		
 		document.getElementById("months").innerHTML = formatNumberWithCommas(monthsDiff);
+		document.getElementById("weeks").innerHTML = formatNumberWithCommas(weeksDiff);
 		document.getElementById("days").innerHTML = formatNumberWithCommas(daysDiff);
 		document.getElementById("hours").innerHTML = formatNumberWithCommas(hourDiff);
 		document.getElementById("minutes").innerHTML = formatNumberWithCommas(minDiff);
