@@ -1,9 +1,57 @@
-<!doctype html>
+
+<!DOCTYPE html>
 <html>
   <head>
-    <title>This is the title of the webpage!</title>
+    <title>Aquarium</title>
+    <link rel="icon" type="image/x-icon" href="https://cdn-icons-png.flaticon.com/512/1587/1587069.png">
+    <style>
+      html {
+        text-align: center;
+        vertical-align: center;
+      }
+      body {
+        background-color: #425465;
+        color: White;
+        font-family: Arial;
+     	display: inline-block;
+     	margin: 0px auto;
+     	text-align: center;
+      }
+      h1   {
+        color: white;
+        font-size: 5.0rem;
+      }
+      img {
+        vertical-align: middle;
+      }
+      p    {
+        color: white;
+        font-size: 3.0rem;
+        vertical-align: baseline;
+      }
+      .units { font-size: 1.4rem; }
+      .values { font-size: 1.8rem; }
+    </style>
   </head>
   <body>
-    <p>This is an example paragraph. Anything in the <strong>body</strong> tag will appear on the page, just like this <strong>p</strong> tag and its contents.</p>
-  </body>
+        <div>
+          <header>
+            <h1 class="u-text u-text-default u-text-1">Aquarium</h1>
+          </header>
+          <img height=64></img>
+          <p>
+            <span id="months" class="values">24.63</span>
+            <span class="units">Monate</span> 
+          </p>
+          <p>
+            <span id="days" class="values">24.63</span>
+            <span class="units">Tage</span> 
+          </p>
+        </div> 
+	</table>
+	<script>
+		var date = new Date();
+		document.getElementById("months").innerHTML = date;
+	</script>
+</body>
 </html>
