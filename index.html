@@ -44,8 +44,20 @@
             <span class="units">Monate</span> 
           </p>
           <p>
-            <span id="days" class="values">0/span>
+            <span id="days" class="values">0</span>
             <span class="units">Tage</span> 
+          </p>
+          <p>
+            <span id="hours" class="values">0</span>
+            <span class="units">Stunden</span> 
+          </p>
+          <p>
+            <span id="minutes" class="values">0</span>
+            <span class="units">Minuten</span> 
+          </p>
+          <p>
+            <span id="seconds" class="values">0</span>
+            <span class="units">Sekunden</span> 
           </p>
         </div> 
 	</table>
@@ -53,8 +65,29 @@
 	function updateTime(){
 		const startDate = new Date('2023-09-01');
 		var currentDate = new Date();
+		
 		const monthsDiff = (currentDate.getFullYear() - startDate.getFullYear()) * 12 + (currentDate.getMonth() - startDate.getMonth());
+		
+		//differenz in ms
+		const timeDiff = currentDate - startDate;
+
+		// Konvertiere die Differenz in Tage
+		const daysDiff = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
+		
+		// Konvertiere die Differenz in Stunden
+		const hourDiff = Math.floor(timeDiff / (1000 * 60 * 60 );
+		
+		// Konvertiere die Differenz in Minuten
+		const minDiff = Math.floor(timeDiff / (1000 * 60 );
+		
+		// Konvertiere die Differenz in Sekunden
+		const secDiff = Math.floor(timeDiff / (1000);
+		
 		document.getElementById("months").innerHTML = monthsDiff;
+		document.getElementById("days").innerHTML = daysDiff;
+		document.getElementById("hours").innerHTML = hourDiff;
+		document.getElementById("minutes").innerHTML = minDiff;
+		document.getElementById("seconds").innerHTML = secDiff;
 	}
 	updateTime();
 	setInterval(updateTime, 500);
