@@ -11,7 +11,6 @@ function scrollFunction() {
         mybutton.classList.add("slide-out-right");
     }
 	
-});
 }
 
 function topFunction() {
