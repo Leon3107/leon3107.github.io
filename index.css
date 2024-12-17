@@ -17,11 +17,31 @@ h2 {
     margin: 0px;
 }
 
+a {
+    color: unset;
+    text-decoration: none;
+}
+
 body {
     margin: 0px;
     padding: 0px;
 }
 
+.header-links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: -16px;
+    margin-left: -16px;
+}
+
+    .header-links a {
+        color: unset;
+        margin-left: 16px;
+        margin-right: 16px;
+        cursor: pointer;
+        text-decoration: none;
+    }
 
 .menu-button {
     z-index: 99;
@@ -52,10 +72,38 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-top: 8px;
+    margin-bottom: 8px;
 }
 
 .text-justify {
     text-align: justify;
+}
+
+.title-on-hover .text-hidden {
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+.title-on-hover .text-hidden h5 {
+    margin-top: 0px;
+}
+
+
+.title-on-hover .text-hidden h3 {
+    margin-bottom: 4px;
+}
+
+.title-on-hover:hover .text-hidden {
+    opacity: 1;
+}
+
+.title-on-hove img {
+    filter: brightness(1);
+    transition: filter 0.2s;
+}
+.title-on-hover:hover img {
+    filter: brightness(0.6);
 }
 
 .theme-items {
@@ -66,12 +114,12 @@ body {
     margin-right: -16px;
 }
 
-.theme-item{
+.theme-item {
     position: relative;
     color: white;
 }
 
-.theme-item img{
+.theme-item img {
     border-radius: 8px;
     width: 100%;
     object-fit: cover;
@@ -80,12 +128,15 @@ body {
 .sticky-header {
     background-color: white;
     color: black;
-    padding: 8px;
-    height: 48px;
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 1000;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, .3);
+}
+
+.mobile-menu {
+    display: none;
 }
 
 .hero {
@@ -113,7 +164,7 @@ body {
         padding-right: 312px;
     }
 
-    .dynamic-text{
+    .dynamic-text {
         font-size: 1.2rem;
     }
 
@@ -204,6 +255,10 @@ body {
         font-size: 1.1rem;
     }
 
+    .header-links {
+        display: none;
+    }
+
     .hero h1 {
         bottom: 64px;
         left: 64px;
@@ -216,6 +271,16 @@ body {
         font-family: Lobster;
         padding: 0px;
         margin: 0px;
+    }
+
+    .distribute {
+        margin-top: 12px;
+        margin-bottom: 12px;
+    }
+
+    .mobile-menu {
+        display: block;
+        width: 34px;
     }
 
     .theme-item {
