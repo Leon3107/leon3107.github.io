@@ -85,14 +85,14 @@ body {
     transition: opacity 0.2s;
 }
 
-.title-on-hover .text-hidden h5 {
-    margin-top: 0px;
-}
+    .title-on-hover .text-hidden h5 {
+        margin-top: 0px;
+    }
 
 
-.title-on-hover .text-hidden h3 {
-    margin-bottom: 4px;
-}
+    .title-on-hover .text-hidden h3 {
+        margin-bottom: 4px;
+    }
 
 .title-on-hover:hover .text-hidden {
     opacity: 1;
@@ -102,6 +102,7 @@ body {
     filter: brightness(1);
     transition: filter 0.2s;
 }
+
 .title-on-hover:hover img {
     filter: brightness(0.6);
 }
@@ -119,11 +120,11 @@ body {
     color: white;
 }
 
-.theme-item img {
-    border-radius: 8px;
-    width: 100%;
-    object-fit: cover;
-}
+    .theme-item img {
+        border-radius: 8px;
+        width: 100%;
+        object-fit: cover;
+    }
 
 .sticky-header {
     background-color: white;
@@ -157,6 +158,38 @@ body {
     .hero h1 {
         position: absolute;
     }
+
+.mobile-menu label {
+    cursor: pointer;
+    background: url(images/menu.svg) no-repeat left center;
+    background-size: contain;
+    display: block;
+    height: 32px;
+    width: 32px;
+}
+
+input:checked + label {
+    background-image: url(images/close.svg);
+}
+
+input#menu {
+    display: none;
+}
+
+.mobile-menu-links {
+    max-height: 0;
+    display: none;
+    overflow: hidden;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100% !important;
+    transition: max-height 0.3s;
+}
+
+.distribute:has(input:checked) ~ .mobile-menu-links {
+    max-height: 500px;
+}
 
 @media (min-width: 1921px) {
     .page-padding {
@@ -218,8 +251,8 @@ body {
 
 @media (min-width: 801px) and (max-width: 1200px) {
     .page-padding {
-        padding-left: 128px;
-        padding-right: 128px;
+        padding-left: 96px;
+        padding-right: 96px;
     }
 
     .dynamic-text {
@@ -227,9 +260,9 @@ body {
     }
 
     .hero h1 {
-        bottom: 128px;
-        left: 128px;
-        right: 128px;
+        bottom: 96px;
+        left: 96px;
+        right: 96px;
         font-size: 4.4rem;
     }
 
@@ -247,8 +280,8 @@ body {
 
 @media (max-width: 800px) {
     .page-padding {
-        padding-left: 64px;
-        padding-right: 64px;
+        padding-left: 48px;
+        padding-right: 48px;
     }
 
     .dynamic-text {
@@ -260,10 +293,10 @@ body {
     }
 
     .hero h1 {
-        bottom: 64px;
-        left: 64px;
+        bottom: 48px;
+        left: 48px;
         font-size: 3rem;
-        right: 64px;
+        right: 48px;
     }
 
     .dynamic-header {
@@ -278,9 +311,14 @@ body {
         margin-bottom: 12px;
     }
 
+    .mobile-menu-links {
+        display: flex;
+    }
+
     .mobile-menu {
         display: block;
         width: 34px;
+        height: 34px;
     }
 
     .theme-item {
