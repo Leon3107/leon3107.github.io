@@ -17,6 +17,43 @@ h2 {
     margin: 0px;
 }
 
+.equipment {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -16px;
+    margin-right: -16px;
+}
+
+.equipment-item {
+    font-weight: 600;
+    color: white;
+    height: 210px;
+    font-size: 1.17em;
+}
+
+    .equipment-item > div {
+        border-radius: 8px;
+        background-color: #005e8d;
+        height: calc(100% - 32px);
+        margin: 16px;
+        position: relative;
+    }
+
+        .equipment-item > div > p {
+            position: absolute;
+            bottom: 0px;
+            left: 16px;
+        }
+        .equipment-item > div > img {
+            position: absolute;
+            top: 16px;
+            left: 32px;
+            height: 120px;
+            width: calc(100% - 64px);
+            object-fit: contain;
+            filter: drop-shadow(2px 1px 4px black);
+        }
+
 a {
     color: unset;
     text-decoration: none;
@@ -30,6 +67,10 @@ a {
 body {
     margin: 0px;
     padding: 0px;
+}
+
+.impressum p {
+    margin-bottom: 64px;
 }
 
 .page-padding .dynamic-header {
@@ -227,6 +268,10 @@ input#menu {
         padding-right: 312px;
     }
 
+    .equipment-item {
+        width: 25%;
+    }
+
     .dynamic-text {
         font-size: 1.2rem;
     }
@@ -265,6 +310,10 @@ input#menu {
         font-size: 1.2rem;
     }
 
+    .equipment-item {
+        width: 25%;
+    }
+
     .hero h1 {
         bottom: 180px;
         left: 180px;
@@ -297,6 +346,10 @@ input#menu {
 
     .dynamic-text {
         font-size: 1.2rem;
+    }
+
+    .equipment-item {
+        width: 50%;
     }
 
     .hero h1 {
@@ -335,6 +388,10 @@ input#menu {
 
     .header-links {
         display: none;
+    }
+
+    .equipment-item {
+        width: 100%;
     }
 
     .hero h1 {
