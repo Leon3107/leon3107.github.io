@@ -22,9 +22,17 @@ a {
     text-decoration: none;
 }
 
+    a:active {
+        color: #005e8d;
+    }
+
 body {
     margin: 0px;
     padding: 0px;
+}
+
+.page-padding .dynamic-header {
+    text-decoration: underline #005e8d;
 }
 
 .header-links {
