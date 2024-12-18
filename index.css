@@ -24,6 +24,7 @@ a {
 
     a:active {
         color: #005e8d;
+        text-decoration: underline #005e8d;
     }
 
 body {
