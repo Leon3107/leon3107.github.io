@@ -26,14 +26,14 @@ h2 {
 
 .equipment-item {
     font-weight: 600;
-    color: white;
+    color: black;
     height: 230px;
     font-size: 1.17em;
 }
 
     .equipment-item > div {
         border-radius: 8px;
-        background-color: #005e8d;
+        background-color: #eee;
         height: calc(100% - 32px);
         margin: 16px;
         position: relative;
@@ -51,7 +51,7 @@ h2 {
             height: 120px;
             width: calc(100% - 64px);
             object-fit: contain;
-            filter: drop-shadow(2px 1px 4px black);
+            filter: drop-shadow(2px 1px 4px gray);
         }
 
 a {
