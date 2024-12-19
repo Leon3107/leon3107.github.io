@@ -1,32 +1,184 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="de">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>WebsiteWebAssembly</title>
-    <base href="/" />
-    <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css" />
-    <link rel="stylesheet" href="css/app.css" />
-    <link rel="icon" type="image/png" href="favicon.png" />
-    <link href="WebsiteWebAssembly.styles.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="Leon Kipping">
+    <meta name="description" content="Willkommen auf meiner Website!">
+    <title>Startseite</title>
+    <link rel="stylesheet" href="index.css" media="screen">
+    <meta property="og:image" content="images/IndexHero.jpg" />
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <meta name="theme-color" content="#478ac9">
+    <meta property="og:title" content="Startseite">
+    <meta property="og:description" content="Willkommen auf meiner Website!">
+    <meta property="og:type" content="website">
 </head>
+<body data-home-page-title="Startseite" data-path-to-root="./" data-include-products="false" data-lang="de">
+    <header class="sticky-header">
+        <div class="page-padding distribute">
+            <div class="mobile-menu">
 
-<body>
-    <div id="app">
-        <svg class="loading-progress">
-            <circle r="40%" cx="50%" cy="50%" />
-            <circle r="40%" cx="50%" cy="50%" />
-        </svg>
-        <div class="loading-progress-text"></div>
+                <input type="checkbox" id="menu">
+                <label for="menu"></label>
+            </div>
+            <h2 style="color: #005e8d">Leon Kipping</h2>
+            <div class="header-links">
+                <a href="/" style="position: relative; display: block;">
+                    <p class="h5 mt-4" style="display: inline-block; color: #005e8d;">Start</p>
+                </a>
+                <a href="/gallery" style="position: relative; display: block;">
+                    <p class="h5 mt-4" style="display: inline-block">Galerie</p>
+                </a>
+                <a href="/impressum" style="position: relative; display: block;">
+                    <p class="h5 mt-4" style="display: inline-block">Impressum</p>
+                </a>
+            </div>
+
+            <div class="mobile-menu">
+            </div>
+        </div>
+
+        <div class="mobile-menu-links">
+            <a href="/">
+                <p class="h5 mt-4" style="color: #005e8d;">Start</p>
+            </a>
+            <a href="/gallery">
+                <p class="h5 mt-4">Galerie</p>
+            </a>
+            <a href="/impressum">
+                <p class="h5 mt-4">Impressum</p>
+            </a>
+        </div>
+    </header>
+
+
+
+    <div class="hero">
+        <img src="images/IndexHero.jpg" />
+        <h1>
+            Herzlich Willkommen!
+        </h1>
     </div>
 
-    <div id="blazor-error-ui">
-        An unhandled error has occurred.
-        <a href="" class="reload">Reload</a>
-        <a class="dismiss">🗙</a>
+    <div class="page-padding padding-element">
+        <p class="dynamic-header">
+            Über mich
+        </p>
+        <p class="text-justify dynamic-text">
+            Mein Name ist Leon Kipping und ich bin ein Hobbyfotograf aus dem schönen Westerwald.
+            Ich fotografiere seit 2018 und habe mich auf die Landschafts- und Architekturfotografie spezialisiert.
+            Ich bin immer auf der Suche nach neuen Motiven und freue mich, wenn ich meine Bilder mit anderen teilen kann.
+        </p>
     </div>
-    <script src="_framework/blazor.webassembly.js"></script>
+
+    <div class="page-padding padding-element">
+        <p class="dynamic-header">
+            Themen
+        </p>
+        <div class="theme-items">
+            <div class="theme-item">
+                <a href="gallery#landscapes">
+                    <div style="margin: 16px; overflow: hidden; border-radius: 8px; height: calc(100% - 32px);">
+                        <img src="images/Landscapes/Preview.jpg" />
+                        <h3 style="position: absolute; bottom: 16px; left: 32px;">
+                            Natur
+                        </h3>
+                    </div>
+                </a>
+            </div>
+            <div class="theme-item">
+                <a href="gallery#architecture">
+                    <div style="margin: 16px; overflow: hidden; border-radius: 8px; height: calc(100% - 32px);">
+                        <img src="images/Architecture/Preview.jpg" />
+                        <h3 style="position: absolute; bottom: 16px; left: 32px;">
+                            Architektur
+                        </h3>
+                    </div>
+                </a>
+            </div>
+            <div class="theme-item">
+                <a href="gallery#animals">
+                    <div style="margin: 16px; overflow: hidden; border-radius: 8px; height: calc(100% - 32px);">
+                        <img src="images/Animals/Preview.jpg" />
+                        <h3 style="position: absolute; bottom: 16px; left: 32px;">
+                            Tiere
+                        </h3>
+                    </div>
+                </a>
+            </div>
+            <div class="theme-item">
+                <a href="gallery#astronomy">
+                    <div style="margin: 16px; overflow: hidden; border-radius: 8px; height: calc(100% - 32px);">
+                        <img src="images/Astronomy/Preview.jpg" />
+                        <h3 style="position: absolute; bottom: 16px; left: 32px;">
+                            Astronomie
+                        </h3>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="page-padding padding-element">
+        <p class="dynamic-header">
+            Kamera
+        </p>
+        <div class="equipment">
+            <div class="equipment-item">
+                <div>
+                    <img src="images/Equipment/Z6.png" />
+                    <p>
+                        Nikon Z6II
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="page-padding padding-element">
+        <p class="dynamic-header">
+            Objektive
+        </p>
+        <div class="equipment">
+            <div class="equipment-item">
+                <div>
+                    <img src="images/Equipment/24120.webp" />
+                    <p>
+                        Nikkor 24-120mm f/4
+                    </p>
+                </div>
+            </div>
+            <div class="equipment-item">
+                <div>
+                    <img src="images/Equipment/70180.webp" />
+                    <p>
+                        Nikkor 70-180mm f/2.8
+                    </p>
+                </div>
+            </div>
+            <div class="equipment-item">
+                <div>
+                    <img src="images/Equipment/viltrox85.png" />
+                    <p>
+                        Viltrox 85mm f/1.8
+                    </p>
+                </div>
+            </div>
+            <div class="equipment-item">
+                <div>
+                    <img src="images/Equipment/viltrox20.webp" />
+                    <p>
+                        Viltrox 20mm f/2.8
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div style="height: 400px;">
+
+    </div>
+
+    <script src="index.js"></script>
 </body>
-
 </html>
