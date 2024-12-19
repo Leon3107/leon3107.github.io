@@ -190,6 +190,38 @@ body {
         transform: scale(1.05);
     }
 
+.image-popover{
+    width: 100vw;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    position: fixed;
+    z-index: 9999;
+    display: none;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+    .image-popover > .image-popover-content {
+        position: absolute;
+        top: 5vh;
+        left: 5vw;
+        right: calc(5vw + 16px);
+        bottom: 5vw;
+        background-color: white;
+        border-radius: 8px;
+        padding: 16px;
+    }
+        .image-popover > .image-popover-content > #imagelarge {
+            object-fit: contain;
+            width: calc(100% - 32px);
+            height: calc(100% - 100px);
+            margin-top: 16px;
+            margin-bottom: 16px;
+        }
+        .image-popover > .image-popover-content > #imagetext {
+            text-align: center;
+        }
+
 .gallery-item {
     position: relative;
     color: white;
