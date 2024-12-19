@@ -241,6 +241,13 @@ body {
     color: white;
 }
 
+    .gallery-item .text-hidden {
+        position: absolute;
+        bottom: 0px;
+        left: 32px;
+        right: 32px;
+    }
+
     .gallery-item img {
         border-radius: 8px;
         width: 100%;
