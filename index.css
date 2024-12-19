@@ -140,6 +140,7 @@ body {
 .title-on-hover .text-hidden {
     opacity: 0;
     transition: opacity 0.2s;
+    pointer-events: none;
 }
 
     .title-on-hover .text-hidden h5 {
@@ -160,7 +161,7 @@ body {
     transition: filter 0.2s;
 }
 
-.title-on-hover:hover img {
+.title-on-hover img:hover {
     filter: brightness(0.6);
 }
 
@@ -184,6 +185,10 @@ body {
     position: relative;
     color: white;
 }
+
+    .theme-item h3 {
+        pointer-events: none;
+    }
 
     .theme-item img {
         border-radius: 8px;
