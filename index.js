@@ -9,7 +9,6 @@ function openPopUp(source, text) {
     var imageText = document.getElementById('imagetext');
     image.src = source;
     imageText.innerHTML = text;
-    popUp.style.display = 'block';
 }
 function closePopUp() {
     var popUp = document.getElementById('imagepopover');
