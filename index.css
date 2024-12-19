@@ -144,7 +144,7 @@ body {
         margin-bottom: 4px;
     }
 
-.title-on-hover:hover .text-hidden {
+.title-on-hover img:hover ~ .text-hidden {
     opacity: 1;
 }
 
@@ -183,6 +183,11 @@ body {
         width: 100%;
         height: 100%;
         object-fit: cover;
+        transition: transform 0.2s;
+    }
+
+    .theme-item img:hover {
+        transform: scale(1.05);
     }
 
 .gallery-item {
