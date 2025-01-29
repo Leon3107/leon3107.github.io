@@ -6,15 +6,12 @@ function blurInput(){
 function openPopUp(source, text) {
     var popUp = document.getElementById('imagepopover');
     var image = document.getElementById('imagelarge');
-    var imageText = document.getElementById('imagetext');
     image.src = source;
-    imageText.innerHTML = text;
+    popUp.style.display = 'unset';
 }
 function closePopUp() {
     var popUp = document.getElementById('imagepopover');
     var image = document.getElementById('imagelarge');
-    var imageText = document.getElementById('imagetext');
     image.src = '';
-    imageText.innerHTML = '';
     popUp.style.display = 'none';
 }
