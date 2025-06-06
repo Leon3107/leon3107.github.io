@@ -378,7 +378,6 @@ body:has(input:checked) .hero{
         position: absolute;
         text-align: start;
         font-weight: 100;
-        bottom: 64px;
     }
 
 .mobile-menu label {
@@ -426,7 +425,7 @@ input#menu {
     }
 
     .dynamic-text {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
     }
 
 	.hero{
@@ -434,8 +433,9 @@ input#menu {
 	}
 
     .hero h1 {
-        font-size: 6rem;
+        font-size: 2rem;
 		left: 256px;
+        bottom: 96px;
     }
 
     .dynamic-header {
@@ -466,7 +466,7 @@ input#menu {
 	}
 
     .dynamic-text {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
     }
 
     .equipment-item {
@@ -474,8 +474,9 @@ input#menu {
     }
 
     .hero h1 {
-        font-size: 5.5rem;
+        font-size: 1.8rem;
 		left: 180px;
+        bottom: 64px;
     }
 
     .dynamic-header {
@@ -506,7 +507,7 @@ input#menu {
     }
 
 	.hero{
-		height: 50vh;
+		height: 500px;
 	}
 
     #imagepopover {
@@ -514,7 +515,7 @@ input#menu {
     }
 
     .dynamic-text {
-        font-size: 1.2rem;
+        font-size: 1.0rem;
     }
 
     .equipment-item {
@@ -522,8 +523,9 @@ input#menu {
     }
 
     .hero h1 {
-        font-size: 3rem;
+        font-size: 1rem;
 		left: 96px;
+        bottom: 48px;
     }
 
     .dynamic-header {
@@ -550,7 +552,7 @@ input#menu {
     }
 
     .dynamic-text {
-        font-size: 1.1rem;
+        font-size: 1.0rem;
     }
 
     .header-links {
@@ -562,12 +564,13 @@ input#menu {
     }
 
 	.hero{
-		height: 40vh;
+		height: 300px;
 	}
 
     .hero h1 {
-        font-size: 2.4rem;
+        font-size: 1rem;
 		left: 48px;
+        bottom: 32px;
     }
 
     .dynamic-header {
