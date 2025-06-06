@@ -353,10 +353,17 @@ body {
     display: none;
 }
 
+body:has(input:checked) .hero{
+	filter: brightness(0.5);
+}
+
 .hero {
     width: 100%;
+	filter: brightness(1);
     position: relative;
     color: white;
+	transition: filter 0.2s;
+	
 }
 
     .hero img {
