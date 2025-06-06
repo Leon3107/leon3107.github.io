@@ -378,6 +378,8 @@ body:has(input:checked) .hero{
         position: absolute;
         text-align: start;
         font-weight: 100;
+		font-style: italic;
+		color: #ffffffaa;
     }
 
 .mobile-menu label {
