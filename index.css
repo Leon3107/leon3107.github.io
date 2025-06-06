@@ -224,14 +224,6 @@ body {
     transition: filter 0.2s;
 }
 
-.title-on-hover img:hover {
-    filter: brightness(0.6);
-}
-
-.title-on-hover img:focus {
-    filter: brightness(0.6);
-}
-
 .theme-items {
     display: flex;
     flex-wrap: wrap;
@@ -306,9 +298,16 @@ body {
 
     .gallery-item .text-hidden {
         position: absolute;
+		height: 128px;
+		background: linear-gradient(0deg, black, transparent);
         bottom: 0px;
-        left: 32px;
-        right: 32px;
+        left: 0;
+		padding: 32px;
+        right: 0;
+		align-content: end;
+    }
+    .gallery-item .text-hidden h5{
+		margin-bottom: 0;
     }
 
     .gallery-item img {
