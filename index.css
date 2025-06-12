@@ -34,6 +34,11 @@ h2 {
     margin: 0px;
 }
 
+.h4 {
+    font-family: Poppins;
+    font-size: 1.2rem;
+}
+
 .equipment {
     display: flex;
     flex-wrap: wrap;
@@ -76,11 +81,6 @@ a {
     color: unset;
     text-decoration: none;
 }
-
-    a:active {
-        color: #005e8d;
-        text-decoration: underline #005e8d;
-    }
 
 body {
     margin: 0px;
@@ -219,7 +219,7 @@ body {
     opacity: 1;
 }
 
-.title-on-hove img {
+.title-on-hover img {
     filter: brightness(1);
     transition: filter 0.2s;
 }
@@ -374,49 +374,40 @@ body:has(input:checked) .hero{
         image-rendering: auto;
     }
 
-    .hero h1 {
+    .hero .hero-container {
         position: absolute;
+    }
+	
+	.hero button{
+		border: 2px solid white;
+		border-radius: 4px;
+		padding: 8px 16px;
+		color: white;
+		position: relative;
+		background-color: #00000055;
+		filter: drop-shadow(4px 4px 4px #00000055);
+	}
+	
+	.hero button:hover{
+		border-color: #bbb;
+	}
+	
+	.hero p{
+		margin: 0px;
+	}
+	
+	.hero h1{
         text-align: start;
         font-weight: 100;
 		font-style: italic;
 		color: #ffffff;
 		opacity: 0.7;
 		transition: opacity 0.2s;
-    }
+	}
 
     .hero h1:hover {
 		opacity: 1;
     }
-
-.mobile-menu label {
-    cursor: pointer;
-    background: url(images/menu.svg) no-repeat left center;
-	fill: white;
-    background-size: contain;
-    display: block;
-    height: 32px;
-    width: 32px;
-}
-
-input:checked + label {
-    background-image: url(images/close.svg);
-	fill: white;
-}
-
-input#menu {
-    display: none;
-}
-
-.mobile-menu-links {
-    max-height: 0;
-    display: none;
-    overflow: hidden;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100% !important;
-    transition: max-height 0.3s;
-}
 
 .distribute:has(input:checked) ~ .mobile-menu-links {
     max-height: 500px;
@@ -440,11 +431,23 @@ input#menu {
 		height: 100vh;
 	}
 
-    .hero h1 {
-        font-size: 2rem;
+    .hero div {
 		left: 256px;
         bottom: 96px;
     }
+
+    .hero h1 {
+        font-size: 1.2rem;
+    }
+
+    .hero .h4 {
+        font-size: 2rem;
+    }
+
+    .hero button {
+		margin-bottom: 32px;
+    }
+
 
     .dynamic-header {
         font-size: 4rem;
@@ -481,11 +484,24 @@ input#menu {
         width: 25%;
     }
 
-    .hero h1 {
-        font-size: 1.8rem;
+    .hero div {
 		left: 180px;
         bottom: 64px;
     }
+
+
+    .hero h1 {
+        font-size: 1.1rem;
+    }
+
+    .hero .h4 {
+        font-size: 1.7rem;
+    }
+
+    .hero button {
+		margin-bottom: 32px;
+    }
+
 
     .dynamic-header {
         font-size: 3.3rem;
@@ -530,11 +546,24 @@ input#menu {
         width: 50%;
     }
 
-    .hero h1 {
-        font-size: 1rem;
+    .hero div {
 		left: 96px;
         bottom: 48px;
     }
+
+    .hero h1 {
+        font-size: 1rem;
+    }
+
+    .hero .h4 {
+        font-size: 1.5rem;
+    }
+
+
+    .hero button {
+		margin-bottom: 16px;
+    }
+
 
     .dynamic-header {
         font-size: 3rem;
@@ -563,10 +592,6 @@ input#menu {
         font-size: 1.0rem;
     }
 
-    .header-links {
-        display: none;
-    }
-
     .equipment-item {
         width: 100%;
     }
@@ -575,10 +600,23 @@ input#menu {
 		height: 300px;
 	}
 
-    .hero h1 {
-        font-size: 1rem;
+    .hero div {
 		left: 48px;
         bottom: 32px;
+    }
+
+    .hero h1 {
+        font-size: 1em;
+    }
+
+
+    .hero .h4 {
+        font-size: 1.2rem;
+    }
+
+
+    .hero button {
+		margin-bottom: 16px;
     }
 
     .dynamic-header {
@@ -591,16 +629,6 @@ input#menu {
     .distribute {
         margin-top: 12px;
         margin-bottom: 12px;
-    }
-
-    .mobile-menu-links {
-        display: flex;
-    }
-
-    .mobile-menu {
-        display: block;
-        width: 34px;
-        height: 34px;
     }
 
     .theme-item {
