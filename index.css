@@ -54,7 +54,7 @@ h2 {
 }
 
     .equipment-item > div {
-        border-radius: 0px;
+        border-radius: 16px;
         background-color: #eee;
         height: calc(100% - 32px);
         margin: 16px;
@@ -197,7 +197,7 @@ body {
 }
 
 .title-on-hover .text-hidden {
-    opacity: 0;
+    opacity: 1;
     transition: opacity 0.2s;
     pointer-events: none;
 }
@@ -294,6 +294,9 @@ body {
 .gallery-item {
     position: relative;
     color: white;
+	overflow: hidden;
+	margin: 16px;
+	border-radius: 16px;
 }
 
     .gallery-item .text-hidden {
@@ -475,8 +478,7 @@ body:has(input:checked) .hero{
     }
 
     .gallery-item {
-        height: 350px;
-        margin-bottom: 26px;
+        height: 400px;
     }
 }
 
@@ -533,8 +535,7 @@ body:has(input:checked) .hero{
     }
 
     .gallery-item {
-        height: 318px;
-        margin-bottom: 26px;
+        height: 380px;
     }
 }
 
@@ -592,7 +593,6 @@ body:has(input:checked) .hero{
 
     .gallery-item {
         width: 50%;
-        margin-bottom: 16px;
     }
 }
 
@@ -651,7 +651,6 @@ body:has(input:checked) .hero{
 
     .gallery-item {
         width: 100%;
-        margin-bottom: 16px;
     }
 }
 
