@@ -383,7 +383,7 @@ body:has(input:checked) .hero{
 	
 	.hero button{
 		border-radius: 6px;
-		padding: 8px 16px;
+		padding: 6px 12px;
 		color: #005e8d;
 		position: relative;
 		background-color: #white;
