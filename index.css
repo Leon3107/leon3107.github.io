@@ -92,7 +92,7 @@ body {
 }
 
 .page-padding .dynamic-header {
-    color: #005e8d;
+    color: black;
 }
 
 .anim-typewriter {
@@ -410,6 +410,21 @@ body:has(input:checked) .hero{
 
 .distribute:has(input:checked) ~ .mobile-menu-links {
     max-height: 500px;
+}
+
+.dynamic-header{
+	text-align: center;
+}
+.dynamic-text{
+	text-align: center;
+}
+
+.header-line{
+	height: 2px;
+	width: 64px;
+	background-color: #005e8d;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 @media (min-width: 1921px) {
