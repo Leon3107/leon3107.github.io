@@ -297,6 +297,7 @@ body {
 	overflow: hidden;
 	margin: 16px;
 	border-radius: 16px;
+	cursor: pointer;
 }
 
     .gallery-item .text-hidden {
