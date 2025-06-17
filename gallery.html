@@ -13,7 +13,7 @@
     <meta property="og:title" content="Galerie">
     <meta property="og:type" content="website">
 </head>
-<body data-home-page-title="Galerie" data-path-to-root="./" data-include-products="false" data-lang="de">
+<body data-home-page-title="Galerie" data-path-to-root="./" data-include-products="false" data-lang="de" id="body">
     <header class="header" id="header">
         <div class="page-padding distribute">
             <a href="/" style="position: relative; display: block;">
@@ -356,13 +356,22 @@
         </div>
     </div>
 
-    <div class="image-popover" id="imagepopover">
+    <!--<div class="image-popover" id="imagepopover">
         <div class="image-popover-content">
             <button onclick="closePopUp()" style="background: none; border: none; position: absolute; right: 16px; top: 16px; cursor: pointer;">
                 <img src="images/close.svg" style="object-fit: contain; height: 32px; width: 32px;" />
             </button>
             <img id="imagelarge" />
         </div>
+    </div>-->
+
+    <div id="gallery-popover">
+        <div class="actions">
+        <button class="close-button" onclick="closePopUp()">
+            &#10006;
+        </button>
+        </div>
+        <img id="imagelarge" />
     </div>
 
     <script src="index.js"></script>

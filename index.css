@@ -19,6 +19,38 @@ html {
     user-select: none;
 }
 
+body:has(#gallery-popover.active) {
+    overflow: hidden;
+    border-right: 14px solid gray;
+}
+
+#gallery-popover {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: color-mix(in srgb, black 80%, transparent 20%);
+    z-index: 999;
+}
+
+    #gallery-popover.active {
+        display: block;
+    }
+    #gallery-popover .actions {
+        top: 4px;
+        right: 16px;
+        position: absolute;
+    }
+    #gallery-popover .close-button {
+        border: 0px;
+        background: transparent;
+        color: white;
+        cursor: pointer;
+        font-size: 2rem;
+    }
+
 h1 {
     font-size: 4.5rem;
     font-weight: 500;
@@ -327,7 +359,7 @@ body {
     position: absolute;
     top: 0;
     width: 100%;
-    z-index: 1000;
+    z-index: 9;
 }
 .header p {
 	color: white;
