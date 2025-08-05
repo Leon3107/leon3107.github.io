@@ -26,15 +26,15 @@ function render() {
   ctx.fillStyle = 'white';
   ctx.textAlign = 'center';
   ctx.textBaseline = 'middle';
-  ctx.shadowColor = 'rgba(0, 0, 0, 0.6)';
-  ctx.shadowBlur = 15;
-  ctx.shadowOffsetX = 4;
-  ctx.shadowOffsetY = 4;
+  ctx.shadowColor = 'rgba(0, 0, 0, 1)';
+  ctx.shadowBlur = 18;
+  ctx.shadowOffsetX = 8;
+  ctx.shadowOffsetY = 8;
 
   ctx.translate(x, y);
   
-  const skewX = 0.5; // je höher, desto schräger
-  const skewY = 0;   // kein Vertikalskew
+  const skewX = 0; // je höher, desto schräger
+  const skewY = 0.1;   // kein Vertikalskew
   ctx.transform(1, skewY, skewX, 1, 0, 0);
 
 
