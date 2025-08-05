@@ -15,7 +15,6 @@ function render() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
 
-  const angle = -10 * Math.PI / 180;
   const x = canvas.width / 2;
   const y = canvas.height - 300;
 
@@ -33,9 +32,13 @@ function render() {
   ctx.shadowOffsetY = 4;
 
   ctx.translate(x, y);
-  ctx.rotate(angle);
+  
+  const skewX = 0.5; // je höher, desto schräger
+  const skewY = 0;   // kein Vertikalskew
+  ctx.transform(1, skewY, skewX, 1, 0, 0);
 
-  ctx.fillText(text, x, y);
+
+  ctx.fillText(text, 0, 0);
 
   ctx.restore();
 }
