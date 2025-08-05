@@ -46,8 +46,8 @@ function render() {
   ctx.textBaseline = 'middle';
   ctx.shadowColor = 'rgba(0, 0, 0, 1)';
   ctx.shadowBlur = 24;
-  ctx.shadowOffsetX = 32;
-  ctx.shadowOffsetY = 32;
+  ctx.shadowOffsetX = 24;
+  ctx.shadowOffsetY = 24;
 
   ctx.translate(x, y);
   
