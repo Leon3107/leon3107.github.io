@@ -24,6 +24,7 @@ function render() {
   // Position (z. B. mittig unten)
   const x = canvas.width / 2;
   const y = canvas.height - 150;
+  
 
   ctx.fillText(text, x, y);
 }
