@@ -34,8 +34,8 @@ function render() {
   const x = canvas.width / 2;
   const y = canvas.height - 540;
 
-  ctx.drawImage(imgTeam1, 100, 100, 140, 140);
-  ctx.drawImage(imgTeam2, x + 300, y, 140, 140);
+  ctx.drawImage(imgTeam1, x - 480, y-100, 200, 200);
+  ctx.drawImage(imgTeam2, x + 280, y-100, 200, 200);
 
   ctx.save(); 
 
@@ -45,9 +45,9 @@ function render() {
   ctx.textAlign = 'center';
   ctx.textBaseline = 'middle';
   ctx.shadowColor = 'rgba(0, 0, 0, 1)';
-  ctx.shadowBlur = 5;
-  ctx.shadowOffsetX = 8;
-  ctx.shadowOffsetY = 8;
+  ctx.shadowBlur = 24;
+  ctx.shadowOffsetX = 32;
+  ctx.shadowOffsetY = 32;
 
   ctx.translate(x, y);
   
