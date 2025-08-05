@@ -11,7 +11,7 @@ function render() {
 
   const imageSource1 = document.getElementById('team1-select').value || 'logos/sgg.png';
   const imageSource2 = document.getElementById('team2-select').value || 'logos/sgg.png';
-  const playerImageSource = document.getElementById('player-select').value || 'tore/test.png';
+  const playerImageSource = document.getElementById('player-select').value || 'tore/19.png';
   
   const imgTeam1 = new Image();
   imgTeam1.src = imageSource1;
