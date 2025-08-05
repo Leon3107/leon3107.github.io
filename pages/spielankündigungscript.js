@@ -13,7 +13,7 @@ function render() {
 
   const imageSource1 = document.getElementById('team1-select').value || 'logos/sgg.png';
   const imageSource2 = document.getElementById('team2-select').value || 'logos/sgg.png';
-  const playerImageSource = document.getElementById('player-select').value || 'ankuedigung/3.png';
+  const playerImageSource = document.getElementById('player-select').value || 'ankuendigung/3.png';
   
   text = ':';
   const imgTeam1 = new Image();
@@ -63,6 +63,7 @@ function render() {
 }
 
 function downloadImage() {
+  render();
   const link = document.createElement('a');
   link.download = 'ergebnis.jpg';
   link.href = canvas.toDataURL('image/jpg');

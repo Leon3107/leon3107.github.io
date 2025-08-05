@@ -1,17 +1,20 @@
 const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
+const img = new Image();
+img.src = 'ergebnis/bg.png';
 
-window.onload = () => {
+img.onload = () => {
   render();
 };
 
 function render() {
-  const text1 = document.getElementById('scoreInput').value || '0';
-  const text2 = document.getElementById('scoreInput2').value || '0';
+  const text1 = document.getElementById('team1-text').value || 'SG Gebhardshain';
+  const text2 = document.getElementById('team2-text').value || 'SG Gebhardshain';
+  const result1 = document.getElementById('team1-result').value || '0';
+  const result2 = document.getElementById('team2-result').value || '0';
 
   const imageSource1 = document.getElementById('team1-select').value || 'logos/sgg.png';
   const imageSource2 = document.getElementById('team2-select').value || 'logos/sgg.png';
-  const playerImageSource = document.getElementById('player-select').value || 'tore/test.png';
   
   const imgTeam1 = new Image();
   imgTeam1.src = imageSource1;
@@ -19,29 +22,24 @@ function render() {
   const imgTeam2 = new Image();
   imgTeam2.src = imageSource2;
 
-  const img = new Image();
-  img.src = playerImageSource;
-
-  text = text1 + ':' + text2;
-
   // Hintergrundbild zeichnen
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
 
   const x = canvas.width / 2;
-  const y = canvas.height - 540;
+  const y = 640;
+
+  const text = result1 + ':' + result2;
 
   ctx.shadowColor = 'rgba(0, 0, 0, 0.6)';
   ctx.shadowBlur = 24;
   ctx.shadowOffsetX = 24;
   ctx.shadowOffsetY = 24;
-  ctx.drawImage(imgTeam1, x - 480, y-110, 200, 200);
-  ctx.drawImage(imgTeam2, x + 280, y-110, 200, 200);
-
-  ctx.save(); 
+  ctx.drawImage(imgTeam1, x - 420, y-250, 220, 220);
+  ctx.drawImage(imgTeam2, x + 200, y-250, 220, 220);
 
   // Textstil
-  ctx.font = 'bold 150px Tahoma';
+  ctx.font = 'bold 120px Tahoma';
   ctx.fillStyle = 'white';
   ctx.textAlign = 'center';
   ctx.textBaseline = 'middle';
@@ -49,17 +47,12 @@ function render() {
   ctx.shadowBlur = 24;
   ctx.shadowOffsetX = 24;
   ctx.shadowOffsetY = 24;
-
-  ctx.translate(x, y);
+  ctx.fillText(text, x, y-110);
+  ctx.fillText(text1, x, y+130);
+  ctx.fillText(text2, x, y+350);
+  ctx.font = 'bold 60px Tahoma';
+  ctx.fillText('vs', x, y+250);
   
-  const skewX = 0;
-  const skewY = 0;
-  ctx.transform(1, skewY, skewX, 1, 0, 0);
-
-
-  ctx.fillText(text, 0, 0);
-
-  ctx.restore();
 }
 
 function downloadImage() {
