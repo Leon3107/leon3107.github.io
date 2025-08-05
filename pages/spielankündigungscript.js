@@ -6,13 +6,16 @@ window.onload = () => {
 };
 
 function render() {
-  const text1 = document.getElementById('scoreInput').value || '0';
-  const text2 = document.getElementById('scoreInput2').value || '0';
+  const text1 = document.getElementById('team1-text').value || 'SG Gebhardshain';
+  const text2 = document.getElementById('team2-text').value || 'SG Gebhardshain';
+  const where = document.getElementById('where').value || 'Gebhardshain';
+  const when = document.getElementById('when').value || 'Sa, 12:10 Uhr';
 
   const imageSource1 = document.getElementById('team1-select').value || 'logos/sgg.png';
   const imageSource2 = document.getElementById('team2-select').value || 'logos/sgg.png';
-  const playerImageSource = document.getElementById('player-select').value || 'tore/test.png';
+  const playerImageSource = document.getElementById('player-select').value || 'ankuedigung/3.png';
   
+  text = ':';
   const imgTeam1 = new Image();
   imgTeam1.src = imageSource1;
   
@@ -22,44 +25,41 @@ function render() {
   const img = new Image();
   img.src = playerImageSource;
 
-  text = text1 + ':' + text2;
-
   // Hintergrundbild zeichnen
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
 
   const x = canvas.width / 2;
-  const y = canvas.height - 540;
+  const y = 480;
 
   ctx.shadowColor = 'rgba(0, 0, 0, 0.6)';
   ctx.shadowBlur = 24;
   ctx.shadowOffsetX = 24;
   ctx.shadowOffsetY = 24;
-  ctx.drawImage(imgTeam1, x - 480, y-110, 200, 200);
-  ctx.drawImage(imgTeam2, x + 280, y-110, 200, 200);
-
-  ctx.save(); 
+  ctx.drawImage(imgTeam1, x - 380, y-110, 200, 200);
+  ctx.drawImage(imgTeam2, x + 180, y-110, 200, 200);
 
   // Textstil
-  ctx.font = 'bold 150px Tahoma';
+  ctx.font = 'bold 120px Tahoma';
   ctx.fillStyle = 'white';
   ctx.textAlign = 'center';
+  ctx.fillText(text, x, y);
   ctx.textBaseline = 'middle';
   ctx.shadowColor = 'rgba(0, 0, 0, 1)';
   ctx.shadowBlur = 24;
   ctx.shadowOffsetX = 24;
   ctx.shadowOffsetY = 24;
-
-  ctx.translate(x, y);
   
-  const skewX = 0;
-  const skewY = 0;
-  ctx.transform(1, skewY, skewX, 1, 0, 0);
+  ctx.font = 'bold 50px Tahoma';
+  ctx.fillText(text1, x - 280, y+130);
+  ctx.fillText(text2, x + 280, y+130);
 
-
-  ctx.fillText(text, 0, 0);
-
-  ctx.restore();
+  
+  ctx.font = 'bold 60px Tahoma';
+  ctx.textAlign = 'right';
+  ctx.fillText(where, x + 420, 1100);
+  ctx.fillText(when, x + 420, 1300);
+  
 }
 
 function downloadImage() {
