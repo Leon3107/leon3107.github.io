@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Torjubel</title>
   <style>
+	  h1{
+		margin: 0;
+	  }
     body {
       font-family: 'Segoe UI';
       text-align: center;
@@ -29,37 +32,44 @@
 		align-items: center;
 		justify-content: center;
 	}
+	.no-stack{
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+	}
   </style>
 </head>
 <body>
 
   <h1>Torjubel</h1>
-<select name="player" id="player-select">
-  <option value="tore/test.png">Thomas Müller</option>
-  <option value="tore/test.png">#19 Luis Nassen</option>
-  <option value="tore/test.png">#16 Lars Rademacher</option>
-  <option value="tore/test.png">#3 Luis Fischer</option>
-  <option value="tore/test.png">#31 Max Müller</option>
-  <option value="tore/test.png">#7 Jary Braun</option>
-  <option value="tore/test.png">#17 Philip Klöckner</option>
-  <option value="tore/test.png">#8 Sven Hellwig</option>
-  <option value="tore/test.png">#24 Gian Luca Puligheddu</option>
-  <option value="tore/test.png">#21 Janik Rosenthal</option>
-  <option value="tore/test.png">#5 Thilo Stinner</option>
-  <option value="tore/test.png">#13 Jannik Braun</option>
-  <option value="tore/test.png">#18 Ben Herr</option>
-  <option value="tore/test.png">#14 Max Böhmer</option>
-  <option value="tore/test.png">#2 Robin Kastl</option>
-  <option value="tore/test.png">#4 Steffen Prinz</option>
-  <option value="tore/test.png">#22 Michael Becher</option>
-  <option value="tore/test.png">#6 Robin Stockschlaeder</option>
-  <option value="tore/test.png">#11 Jan Niklas Franken</option>
-  <option value="tore/test.png">#10 Joshua Brenner</option>
-  <option value="tore/test.png">#9 Flavio Giehl</option>
-  <option value="tore/test.png">#20 Pascal Hammer</option>
-  <option value="tore/test.png">#43 Jonathan Schwan</option>
-</select>
+	<select name="player" id="player-select">
+	  <option value="tore/test.png">Thomas Müller</option>
+	  <option value="tore/test.png">#19 Luis Nassen</option>
+	  <option value="tore/test.png">#16 Lars Rademacher</option>
+	  <option value="tore/test.png">#3 Luis Fischer</option>
+	  <option value="tore/test.png">#31 Max Müller</option>
+	  <option value="tore/test.png">#7 Jary Braun</option>
+	  <option value="tore/test.png">#17 Philip Klöckner</option>
+	  <option value="tore/test.png">#8 Sven Hellwig</option>
+	  <option value="tore/test.png">#24 Gian Luca Puligheddu</option>
+	  <option value="tore/test.png">#21 Janik Rosenthal</option>
+	  <option value="tore/test.png">#5 Thilo Stinner</option>
+	  <option value="tore/test.png">#13 Jannik Braun</option>
+	  <option value="tore/test.png">#18 Ben Herr</option>
+	  <option value="tore/test.png">#14 Max Böhmer</option>
+	  <option value="tore/test.png">#2 Robin Kastl</option>
+	  <option value="tore/test.png">#4 Steffen Prinz</option>
+	  <option value="tore/test.png">#22 Michael Becher</option>
+	  <option value="tore/test.png">#6 Robin Stockschlaeder</option>
+	  <option value="tore/test.png">#11 Jan Niklas Franken</option>
+	  <option value="tore/test.png">#10 Joshua Brenner</option>
+	  <option value="tore/test.png">#9 Flavio Giehl</option>
+	  <option value="tore/test.png">#20 Pascal Hammer</option>
+	  <option value="tore/test.png">#43 Jonathan Schwan</option>
+	</select>
   <div class="stack">
+	<div class="no-stack">
 		<select name="team 1" id="team1-select">
 		  <option value="logos/sgg.png">SG Gebhardshain</option>
 		  <option value="logos/sgherdorf.jpg">SG Altenkirchen</option>
@@ -76,9 +86,10 @@
 		  <option value="logos/sgherdorf.jpg">SG Mittelhof</option>
 		  <option value="logos/sgherdorf.jpg">SG Atzelgift</option>
 		</select>
-	  <input type="text" id="scoreInput" placeholder="0" />
+		<input type="text" id="scoreInput" placeholder="0" />
+	</div>
 	  <p> : </p>
-	  <input type="text" id="scoreInput2" placeholder="0" />
+	<div class="no-stack">
 		<select name="team 2" id="team2-select">
 		  <option value="logos/sgg.png">SG Gebhardshain</option>
 		  <option value="logos/sgherdorf.jpg">SG Altenkirchen</option>
@@ -95,6 +106,8 @@
 		  <option value="logos/sgherdorf.jpg">SG Mittelhof</option>
 		  <option value="logos/sgherdorf.jpg">SG Atzelgift</option>
 		</select>
+	  <input type="text" id="scoreInput2" placeholder="0" />
+	</div>
   </div>
   <br />
   <button onclick="render()">Vorschau aktualisieren</button>
