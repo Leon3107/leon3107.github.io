@@ -1,8 +1,5 @@
 const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
-const img = new Image();
-img.crossOrigin="anonymous";
-img.src = 'tore/test.png';
 
 img.onload = () => {
   render();
@@ -14,6 +11,7 @@ function render() {
 
   const imageSource1 = document.getElementById('team1-select').value || 'logos/sgg.png';
   const imageSource2 = document.getElementById('team2-select').value || 'logos/sgg.png';
+  const playerImageSource = document.getElementById('player-select').value || 'tore/test.png';
   
   const imgTeam1 = new Image();
   imgTeam1.crossOrigin="anonymous";
@@ -22,6 +20,10 @@ function render() {
   const imgTeam2 = new Image();
   imgTeam2.crossOrigin="anonymous";
   imgTeam2.src = imageSource2;
+
+  const img = new Image();
+  img.crossOrigin="anonymous";
+  img.src = playerImageSource;
 
   text = text1 + ':' + text2;
 
@@ -32,13 +34,13 @@ function render() {
   const x = canvas.width / 2;
   const y = canvas.height - 540;
 
-  ctx.drawImage(imgTeam1, x - 400, y, 140, 140);
+  ctx.drawImage(imgTeam1, 100, 100, 140, 140);
   ctx.drawImage(imgTeam2, x + 300, y, 140, 140);
 
   ctx.save(); 
 
   // Textstil
-  ctx.font = 'bold 120px Arial';
+  ctx.font = 'bold 180px Arial';
   ctx.fillStyle = 'white';
   ctx.textAlign = 'center';
   ctx.textBaseline = 'middle';

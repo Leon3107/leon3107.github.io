@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Fußball-Ergebnis Generator</title>
+  <title>Torjubel</title>
   <style>
     body {
       font-family: 'Segoe UI';
@@ -12,13 +12,12 @@
     }
     canvas {
       width: auto;
-      height: 100vh;
-      border: 1px solid #ccc;
+      height: calc(100vh - 400px);
     }
     input, button, select {
       margin-top: 1rem;
 	  border-radius: 8px;
-	  border: 1px solid black;
+	  border: 2px solid black;
       padding: 0.5rem;
       font-size: 1rem;
 	  margin-right: 8px;
@@ -34,7 +33,11 @@
 </head>
 <body>
 
-  <h1>Endstand-Generator</h1>
+  <h1>Torjubel</h1>
+<select name="player" id="player-select">
+  <option value="tore/test.png">Thomas Müller</option>
+  <option value="tore/test.png"></option>
+</select>
   <div class="stack">
 		<select name="team 1" id="team1-select">
 		  <option value="logos/sgg.png">SGG</option>
