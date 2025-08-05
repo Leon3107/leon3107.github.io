@@ -29,7 +29,7 @@ function render() {
   ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
 
   const x = canvas.width / 2;
-  const y = canvas.height - 500;
+  const y = canvas.height - 540;
 
   ctx.shadowColor = 'rgba(0, 0, 0, 0.6)';
   ctx.shadowBlur = 24;
