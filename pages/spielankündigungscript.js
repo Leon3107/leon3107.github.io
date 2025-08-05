@@ -46,9 +46,9 @@ function render() {
   ctx.fillText(text, x, y);
   ctx.textBaseline = 'middle';
   ctx.shadowColor = 'rgba(0, 0, 0, 1)';
-  ctx.shadowBlur = 24;
-  ctx.shadowOffsetX = 24;
-  ctx.shadowOffsetY = 24;
+  ctx.shadowBlur = 20;
+  ctx.shadowOffsetX = 12;
+  ctx.shadowOffsetY = 12;
   
   ctx.font = 'bold 50px Tahoma';
   ctx.fillText(text1, x - 280, y+130);

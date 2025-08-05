@@ -43,10 +43,10 @@ function render() {
   ctx.fillStyle = 'white';
   ctx.textAlign = 'center';
   ctx.textBaseline = 'middle';
-  ctx.shadowColor = 'rgba(0, 0, 0, 1)';
-  ctx.shadowBlur = 24;
-  ctx.shadowOffsetX = 24;
-  ctx.shadowOffsetY = 24;
+  ctx.shadowColor = 'rgba(0, 0, 0, 0.8)';
+  ctx.shadowBlur = 20;
+  ctx.shadowOffsetX = 12;
+  ctx.shadowOffsetY = 12;
   ctx.fillText(text, x, y-110);
   ctx.fillText(text1, x, y+130);
   ctx.fillText(text2, x, y+350);
