@@ -32,8 +32,8 @@ function render() {
   const x = canvas.width / 2;
   const y = canvas.height - 540;
 
-  ctx.drawImage(imgTeam1, 100, x, 100, 100);
-  ctx.drawImage(imgTeam2, 800, x, 100, 100);
+  ctx.drawImage(imgTeam1, x - 400, y, 140, 140);
+  ctx.drawImage(imgTeam2, x + 300, y, 140, 140);
 
   ctx.save(); 
 
@@ -50,7 +50,7 @@ function render() {
   ctx.translate(x, y);
   
   const skewX = 0; // je höher, desto schräger
-  const skewY = -0.1;   // kein Vertikalskew
+  const skewY = 0;   // kein Vertikalskew
   ctx.transform(1, skewY, skewX, 1, 0, 0);
 
 
