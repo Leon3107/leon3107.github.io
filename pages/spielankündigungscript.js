@@ -14,15 +14,12 @@ function render() {
   const playerImageSource = document.getElementById('player-select').value || 'tore/test.png';
   
   const imgTeam1 = new Image();
-  imgTeam1.crossOrigin="anonymous";
   imgTeam1.src = imageSource1;
   
   const imgTeam2 = new Image();
-  imgTeam2.crossOrigin="anonymous";
   imgTeam2.src = imageSource2;
 
   const img = new Image();
-  img.crossOrigin="anonymous";
   img.src = playerImageSource;
 
   text = text1 + ':' + text2;
@@ -34,13 +31,17 @@ function render() {
   const x = canvas.width / 2;
   const y = canvas.height - 540;
 
-  ctx.drawImage(imgTeam1, x - 480, y-100, 200, 200);
-  ctx.drawImage(imgTeam2, x + 280, y-100, 200, 200);
+  ctx.shadowColor = 'rgba(0, 0, 0, 0.6)';
+  ctx.shadowBlur = 24;
+  ctx.shadowOffsetX = 24;
+  ctx.shadowOffsetY = 24;
+  ctx.drawImage(imgTeam1, x - 480, y-110, 200, 200);
+  ctx.drawImage(imgTeam2, x + 280, y-110, 200, 200);
 
   ctx.save(); 
 
   // Textstil
-  ctx.font = 'bold 180px Arial';
+  ctx.font = 'bold 150px Tahoma';
   ctx.fillStyle = 'white';
   ctx.textAlign = 'center';
   ctx.textBaseline = 'middle';
@@ -51,8 +52,8 @@ function render() {
 
   ctx.translate(x, y);
   
-  const skewX = 0; // je höher, desto schräger
-  const skewY = 0;   // kein Vertikalskew
+  const skewX = 0;
+  const skewY = 0;
   ctx.transform(1, skewY, skewX, 1, 0, 0);
 
 
@@ -63,7 +64,7 @@ function render() {
 
 function downloadImage() {
   const link = document.createElement('a');
-  link.download = 'ergebnis.png';
-  link.href = canvas.toDataURL('image/png');
+  link.download = 'ergebnis.jpg';
+  link.href = canvas.toDataURL('image/jpg');
   link.click();
 }
