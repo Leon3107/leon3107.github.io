@@ -13,6 +13,8 @@ function render() {
   const result1 = document.getElementById('team1-result').value || '0';
   const result2 = document.getElementById('team2-result').value || '0';
 
+  const day = document.getElementById('spieltag').value || '1';
+
   const imageSource1 = document.getElementById('team1-select').value || 'logos/sgg.png';
   const imageSource2 = document.getElementById('team2-select').value || 'logos/sgg.png';
   
@@ -27,7 +29,7 @@ function render() {
   ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
 
   const x = canvas.width / 2;
-  const y = 640;
+  const y = 720;
 
   const text = result1 + ':' + result2;
 
@@ -51,7 +53,12 @@ function render() {
   ctx.fillText(text1, x, y+130);
   ctx.fillText(text2, x, y+350);
   ctx.font = 'bold 60px Tahoma';
-  ctx.fillText('vs', x, y+250);
+  ctx.fillText('vs', x, y+228);
+  ctx.font = '58px Tahoma';
+  ctx.textAlign = 'left';
+  ctx.shadowOffsetX = 10;
+  ctx.shadowOffsetY = 10;
+  ctx.fillText(day, x+299, y-362);
   
 }
 
