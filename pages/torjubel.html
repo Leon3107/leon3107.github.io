@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fußball-Ergebnis Generator</title>
+  <style>
+    body {
+      font-family: 'Segoe UI';
+      text-align: center;
+      padding: 2rem;
+    }
+    canvas {
+      max-width: 100%;
+      height: auto;
+      border: 1px solid #ccc;
+    }
+    input, button, select {
+      margin-top: 1rem;
+	  border-radius: 8px;
+	  border: 1px solid black;
+      padding: 0.5rem;
+      font-size: 1rem;
+	  margin-right: 8px;
+	  margin-left: 8px;
+	  width: 128px;
+    }
+	.stack{
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+  </style>
+</head>
+<body>
+
+  <h1>Endstand-Generator</h1>
+  <div class="stack">
+		<select name="team 1" id="team1-select">
+		  <option value="logos/sgg.png">SGG</option>
+		  <option value="logos/sgherdorf.jpg">SG Herdorf</option>
+		</select>
+	  <input type="text" id="scoreInput" placeholder="4" />
+	  <p> : </p>
+	  <input type="text" id="scoreInput2" placeholder="3" />
+		<select name="team 2" id="team2-select">
+		  <option value="logos/sgg.png">SGG</option>
+		  <option value="logos/sgherdorf.jpg">SG Herdorf</option>
+		</select>
+  </div>
+  <br />
+  <button onclick="render()">Vorschau aktualisieren</button>
+  <button onclick="downloadImage()">Bild herunterladen</button>
+  <br /><br />
+
+  <canvas id="canvas" style="display: none" width="1200" height="2041"></canvas>
+
+  <script src="script.js"></script>
+
+</body>
+</html>

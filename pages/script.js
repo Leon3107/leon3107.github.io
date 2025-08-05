@@ -2,22 +2,38 @@ const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
 const img = new Image();
 img.crossOrigin="anonymous";
-img.src = 'test.png'; // dein Bildname
+img.src = 'tore/test.png';
 
 img.onload = () => {
-  render(); // initiale Zeichnung
+  render();
 };
 
 function render() {
-  const text = document.getElementById('scoreInput').value || '0:0';
+  const text1 = document.getElementById('scoreInput').value || '0';
+  const text2 = document.getElementById('scoreInput2').value || '0';
+
+  const imageSource1 = document.getElementById('team1-select').value || 'logos/sgg.png';
+  const imageSource2 = document.getElementById('team2-select').value || 'logos/sgg.png';
+  
+  const imgTeam1 = new Image();
+  imgTeam1.crossOrigin="anonymous";
+  imgTeam1.src = imageSource1;
+  
+  const imgTeam2 = new Image();
+  imgTeam2.crossOrigin="anonymous";
+  imgTeam2.src = imageSource2;
+
+  text = text1 + ':' + text2;
 
   // Hintergrundbild zeichnen
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
 
   const x = canvas.width / 2;
-  const y = canvas.height - 300;
+  const y = canvas.height - 540;
 
+  ctx.drawImage(imgTeam1, 100, x, 100, 100);
+  ctx.drawImage(imgTeam2, 800, x, 100, 100);
 
   ctx.save(); 
 
@@ -27,14 +43,14 @@ function render() {
   ctx.textAlign = 'center';
   ctx.textBaseline = 'middle';
   ctx.shadowColor = 'rgba(0, 0, 0, 1)';
-  ctx.shadowBlur = 18;
+  ctx.shadowBlur = 5;
   ctx.shadowOffsetX = 8;
   ctx.shadowOffsetY = 8;
 
   ctx.translate(x, y);
   
   const skewX = 0; // je höher, desto schräger
-  const skewY = 0.1;   // kein Vertikalskew
+  const skewY = -0.1;   // kein Vertikalskew
   ctx.transform(1, skewY, skewX, 1, 0, 0);
 
 
