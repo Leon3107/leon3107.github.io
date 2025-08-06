@@ -9,7 +9,8 @@ function render() {
   const text1 = document.getElementById('team1-text').value || 'SG Gebhardshain';
   const text2 = document.getElementById('team2-text').value || 'SG Gebhardshain';
   const where = document.getElementById('where').value || 'Gebhardshain';
-  const when = document.getElementById('when').value || 'Sa, 12:10 Uhr';
+  const when = document.getElementById('when').value || '12:10 Uhr';
+  const date = document.getElementById('date').value || 'Sa, 10.10.2025';
 
   const imageSource1 = document.getElementById('team1-select').value || 'logos/sgg.png';
   const imageSource2 = document.getElementById('team2-select').value || 'logos/sgg.png';
@@ -57,13 +58,13 @@ function render() {
   
   ctx.font = 'bold 60px Tahoma';
   ctx.textAlign = 'right';
-  ctx.fillText(where, x + 360, 1100);
-  ctx.fillText(when, x + 360, 1300);
+  ctx.fillText(where, x + 420, 1094);
+  ctx.fillText(date, x + 420, 1262);
+  ctx.fillText(when, x + 420, 1422);
   
 }
 
 function downloadImage() {
-  render();
   const link = document.createElement('a');
   link.download = 'ergebnis.jpg';
   link.href = canvas.toDataURL('image/jpg');

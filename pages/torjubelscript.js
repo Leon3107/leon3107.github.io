@@ -63,7 +63,6 @@ function render() {
 }
 
 function downloadImage() {
-  render();
   const link = document.createElement('a');
   link.download = 'ergebnis.jpg';
   link.href = canvas.toDataURL('image/jpg');
