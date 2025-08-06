@@ -1,9 +1,9 @@
 const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
 
-window.onload = () => {
-  render();
-};
+document.addEventListener("DOMContentLoaded", function(event) {
+    render();
+});
 
 function render() {
   const text1 = document.getElementById('team1-text').value || 'SG Gebhardshain';
@@ -30,12 +30,12 @@ function render() {
   ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
 
   const x = canvas.width / 2;
-  const y = 480;
+  const y = 540;
 
   ctx.shadowColor = 'rgba(0, 0, 0, 0.6)';
-  ctx.shadowBlur = 24;
-  ctx.shadowOffsetX = 24;
-  ctx.shadowOffsetY = 24;
+  ctx.shadowBlur = 20;
+  ctx.shadowOffsetX = 12;
+  ctx.shadowOffsetY = 12;
   ctx.drawImage(imgTeam1, x - 380, y-110, 200, 200);
   ctx.drawImage(imgTeam2, x + 180, y-110, 200, 200);
 
@@ -57,8 +57,8 @@ function render() {
   
   ctx.font = 'bold 60px Tahoma';
   ctx.textAlign = 'right';
-  ctx.fillText(where, x + 420, 1100);
-  ctx.fillText(when, x + 420, 1300);
+  ctx.fillText(where, x + 360, 1100);
+  ctx.fillText(when, x + 360, 1300);
   
 }
 
