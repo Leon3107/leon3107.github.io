@@ -77,7 +77,7 @@ function render() {
       ctx.fillText(lines[i], leftX, lefyY + (i*lineheight) );
 
   ctx.font = '58px Tahoma';
-  ctx.textBaseline = 'center';
+  ctx.textBaseline = 'middle';
   ctx.textAlign = 'left';
   ctx.shadowOffsetX = 10;
   ctx.shadowOffsetY = 10;
