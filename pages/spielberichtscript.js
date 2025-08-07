@@ -77,11 +77,11 @@ function render() {
       ctx.fillText(lines[i], leftX, lefyY + (i*lineheight) );
 
   ctx.font = '58px Tahoma';
-  ctx.textBaseline = 'middle';
+  ctx.textBaseline = 'top';
   ctx.textAlign = 'left';
   ctx.shadowOffsetX = 10;
   ctx.shadowOffsetY = 10;
-  ctx.fillText(day, 900, 357);
+  ctx.fillText(day, 900, 327);
   
 }
 
