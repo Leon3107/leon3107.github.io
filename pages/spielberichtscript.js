@@ -1,17 +1,19 @@
 const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
 const img = new Image();
-img.src = 'ergebnis/bg.png';
+img.src = 'bericht/bg.png';
 
 img.onload = () => {
   render();
 };
 
 function render() {
-  const text1 = document.getElementById('team1-text').value || 'SG Gebhardshain';
-  const text2 = document.getElementById('team2-text').value || 'SG Gebhardshain';
   const result1 = document.getElementById('team1-result').value || '0';
   const result2 = document.getElementById('team2-result').value || '0';
+  const result1Half = document.getElementById('team1-result-halftime').value || '0';
+  const result2Half = document.getElementById('team2-result-halftime').value || '0';
+  const goals1 = document.getElementById('team1-goals').value || 'Tim Müller 42\' 43\' 44\'';
+  const goals2 = document.getElementById('team2-goals').value || 'Tim Müller 42\' 43\' 44\'';
 
   const day = document.getElementById('spieltag').value || '1';
 
@@ -32,6 +34,7 @@ function render() {
   const y = 760;
 
   const text = result1 + ':' + result2;
+  const text2 = '(' + result1Half + ':' + result2Half + ')';
 
   ctx.shadowColor = 'rgba(0, 0, 0, 0.6)';
   ctx.shadowBlur = 24;
@@ -51,21 +54,39 @@ function render() {
   ctx.shadowOffsetY = 12;
   ctx.fillText(text, x, y-110);
   ctx.font = 'bold 80px Tahoma';
-  ctx.fillText(text1, x, y+130);
-  ctx.fillText(text2, x, y+350);
-  ctx.font = 'bold 60px Tahoma';
-  ctx.fillText('vs', x, y+232);
+  ctx.fillText(text2, x, y+30);
+  ctx.font = 'bold 40px Tahoma';
+  ctx.textBaseline = 'top';
+  ctx.textAlign = 'left';
+
+  var leftX = x+60;
+  var lefyY = y+130;
+  var lineheight = 56;
+  var lines = goals2.split('\n');
+
+  for (var i = 0; i<lines.length; i++)
+      ctx.fillText(lines[i], leftX, lefyY + (i*lineheight) );
+
+  ctx.textBaseline = 'top';
+  ctx.textAlign = 'right';
+  leftX = x-60;
+  lefyY = y+130;
+  lines = goals1.split('\n');
+  
+  for (var i = 0; i<lines.length; i++)
+      ctx.fillText(lines[i], leftX, lefyY + (i*lineheight) );
+
   ctx.font = '58px Tahoma';
   ctx.textAlign = 'left';
   ctx.shadowOffsetX = 10;
   ctx.shadowOffsetY = 10;
-  ctx.fillText(day, x+299, y-402);
+  ctx.fillText(day, x+299, y-432);
   
 }
 
 function downloadImage() {
   const link = document.createElement('a');
-  link.download = 'ergebnis.png';
+  link.download = 'bericht.png';
   link.href = canvas.toDataURL('image/png');
   link.click();
 }

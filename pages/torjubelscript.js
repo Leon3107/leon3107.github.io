@@ -64,7 +64,7 @@ function render() {
 
 function downloadImage() {
   const link = document.createElement('a');
-  link.download = 'ergebnis.jpg';
-  link.href = canvas.toDataURL('image/jpg');
+  link.download = 'jubel.png';
+  link.href = canvas.toDataURL('image/png');
   link.click();
 }

@@ -51,9 +51,9 @@ function render() {
   ctx.shadowOffsetX = 12;
   ctx.shadowOffsetY = 12;
   
-  ctx.font = 'bold 50px Tahoma';
-  ctx.fillText(text1, x - 280, y+130);
-  ctx.fillText(text2, x + 280, y+130);
+  ctx.font = 'bold 40px Tahoma';
+  ctx.fillText(text1, x - 280, y+140);
+  ctx.fillText(text2, x + 280, y+140);
 
   
   ctx.font = 'bold 60px Tahoma';
@@ -66,7 +66,7 @@ function render() {
 
 function downloadImage() {
   const link = document.createElement('a');
-  link.download = 'ergebnis.jpg';
-  link.href = canvas.toDataURL('image/jpg');
+  link.download = 'ankuendigung.png';
+  link.href = canvas.toDataURL('image/png');
   link.click();
 }
