@@ -31,17 +31,17 @@ function render() {
   ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
 
   const x = canvas.width / 2;
-  const y = 540;
+  const y = 280;
 
   ctx.shadowColor = 'rgba(0, 0, 0, 0.6)';
   ctx.shadowBlur = 20;
   ctx.shadowOffsetX = 12;
   ctx.shadowOffsetY = 12;
-  ctx.drawImage(imgTeam1, x - 380, y-110, 200, 200);
-  ctx.drawImage(imgTeam2, x + 180, y-110, 200, 200);
+  ctx.drawImage(imgTeam1, x - 300, y-110, 160, 160);
+  ctx.drawImage(imgTeam2, x + 140, y-110, 160, 160);
 
   // Textstil
-  ctx.font = 'bold 120px Tahoma';
+  ctx.font = 'bold 100px Tahoma';
   ctx.fillStyle = 'white';
   ctx.textAlign = 'center';
   ctx.fillText(text, x, y);
@@ -51,16 +51,16 @@ function render() {
   ctx.shadowOffsetX = 12;
   ctx.shadowOffsetY = 12;
   
-  ctx.font = 'bold 40px Tahoma';
-  ctx.fillText(text1, x - 280, y+140);
-  ctx.fillText(text2, x + 280, y+140);
+  ctx.font = 'bold 30px Tahoma';
+  ctx.fillText(text1, x - 220, y+80);
+  ctx.fillText(text2, x + 220, y+80);
 
   
-  ctx.font = 'bold 60px Tahoma';
+  ctx.font = 'bold 40px Tahoma';
   ctx.textAlign = 'right';
-  ctx.fillText(where, x + 420, 1094);
-  ctx.fillText(date, x + 420, 1262);
-  ctx.fillText(when, x + 420, 1422);
+  ctx.fillText(where, x + 280, 500);
+  ctx.fillText(date, x + 280, 590);
+  ctx.fillText(when, x + 280, 680);
   
 }
 
