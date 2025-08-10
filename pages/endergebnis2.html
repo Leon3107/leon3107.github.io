@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Endergebnis</title>
+  <link rel="stylesheet" href="https://use.typekit.net/gui8owc.css">
+  <style>
+	  h1{
+		margin: 0;
+	  }
+    body {
+      text-align: center;
+      padding: 2rem;
+		font-family: "tahoma", sans-serif;
+		font-weight: 700;
+		font-style: normal;
+    }
+    canvas {
+      width: auto;
+      height: calc(100vh - 400px);
+    }
+    button, select {
+      margin-top: 1rem;
+	  border-radius: 8px;
+	  color: white;
+	  background: #517eb8;
+	  border: none;
+      padding: 0.5rem;
+      font-size: 1rem;
+	  margin-right: 8px;
+	  margin-left: 8px;
+	  width: 128px;
+	  filter: drop-shadow(2px 2px 3px black);
+    }
+	input {
+      margin-top: 1rem;
+	  border-radius: 8px;
+	  background: white;
+	  border: 2px solid black;
+      padding: 0.5rem;
+      font-size: 1rem;
+	  margin-right: 8px;
+	  margin-left: 8px;
+	  width: 128px;
+	}
+	.stack{
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	.no-stack{
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+	}
+  </style>
+</head>
+<body>
+
+  <h1>Endergebnis</h1>
+<input type="text" id="spieltag" placeholder="Spieltag" />
+  <div class="stack">	  
+	<div class="no-stack">
+		<select name="team 1" id="team1-select">
+		  <option value="logos/sgg.png">SG Gebhardshain</option>
+		  <option value="logos/Altenkirchen.png">SG Altenkirchen</option>
+		  <option value="logos/Wallmentroth.png">SG Wallmentroth</option>
+		  <option value="logos/ALpenrod.png">SG ALpenrod</option>
+		  <option value="logos/Weyerbusch.png">Weyerbusch</option>
+		  <option value="logos/Weitefeld.png">SG Weitefeld</option>
+		  <option value="logos/Wissen.png">VfB Wissen</option>
+		  <option value="logos/Niederfischbach.png">Niederfischbach</option>
+		  <option value="logos/Niederdreisbach.png">Niederdreisbach</option>
+		  <option value="logos/Rennerod.png">SG Rennerod</option>
+		  <option value="logos/Schönstein.png">Schönstein</option>
+		  <option value="logos/Bruchertseifen.png">SG Bruchertseifen</option>
+		  <option value="logos/Mittelhof.png">SG Mittelhof</option>
+		  <option value="logos/Atzelgift.png">SG Atzelgift</option>
+		</select>
+	  <input type="text" id="team1-text" placeholder="SG Gebhardshain" />
+	  <input type="text" id="team1-result" placeholder="0" />
+	</div>
+	  <p> : </p>
+	<div class="no-stack">
+		<select name="team 2" id="team2-select">
+		  <option value="logos/sgg.png">SG Gebhardshain</option>
+		  <option value="logos/Altenkirchen.png">SG Altenkirchen</option>
+		  <option value="logos/Wallmentroth.png">SG Wallmentroth</option>
+		  <option value="logos/ALpenrod.png">SG ALpenrod</option>
+		  <option value="logos/Weyerbusch.png">Weyerbusch</option>
+		  <option value="logos/Weitefeld.png">SG Weitefeld</option>
+		  <option value="logos/Wissen.png">VfB Wissen</option>
+		  <option value="logos/Niederfischbach.png">Niederfischbach</option>
+		  <option value="logos/Niederdreisbach.png">Niederdreisbach</option>
+		  <option value="logos/Rennerod.png">SG Rennerod</option>
+		  <option value="logos/Schönstein.png">Schönstein</option>
+		  <option value="logos/Bruchertseifen.png">SG Bruchertseifen</option>
+		  <option value="logos/Mittelhof.png">SG Mittelhof</option>
+		  <option value="logos/Atzelgift.png">SG Atzelgift</option>
+		</select>
+	  <input type="text" id="team2-text" placeholder="SG Gebhardshain" />
+	  <input type="text" id="team2-result" placeholder="0" />
+	</div>
+  </div>
+  <br />
+  <button onclick="render()">Erstellen</button>
+  <button onclick="downloadImage()">Herunterladen</button>
+  <br /><br />
+
+  <canvas id="canvas" width="1200" height="2041"></canvas>
+
+  <script src="endergebnisscript2.js"></script>
+
+</body>
+</html>
