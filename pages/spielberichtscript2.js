@@ -1,7 +1,7 @@
 const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
 const img = new Image();
-img.src = 'bericht/bg.png';
+img.src = 'bericht2/bg.png';
 
 img.onload = () => {
   render();
@@ -12,8 +12,8 @@ function render() {
   const result2 = document.getElementById('team2-result').value || '0';
   const result1Half = document.getElementById('team1-result-halftime').value || '0';
   const result2Half = document.getElementById('team2-result-halftime').value || '0';
-  const goals1 = document.getElementById('team1-goals').value || 'Tim Müller 42\' 43\' 44\'';
-  const goals2 = document.getElementById('team2-goals').value || 'Tim Müller 42\' 43\' 44\'';
+  const goals1 = document.getElementById('team1-goals').value || '';
+  const goals2 = document.getElementById('team2-goals').value || '';
 
   const day = document.getElementById('spieltag').value || '1';
 
