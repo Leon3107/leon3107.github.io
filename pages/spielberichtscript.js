@@ -81,7 +81,7 @@ function render() {
   ctx.textAlign = 'left';
   ctx.shadowOffsetX = 10;
   ctx.shadowOffsetY = 10;
-  ctx.fillText(day, 600, 164);
+  ctx.fillText(day, 600, 168);
 }
 
 function downloadImage() {
