@@ -81,7 +81,7 @@ function render() {
   ctx.textAlign = 'left';
   ctx.shadowOffsetX = 10;
   ctx.shadowOffsetY = 10;
-  ctx.fillText(day, 602, 160);
+  ctx.fillText(day, 600, 164);
   
 }
 
