@@ -12,8 +12,8 @@ function render() {
   const result2 = document.getElementById('team2-result').value || '0';
   const result1Half = document.getElementById('team1-result-halftime').value || '0';
   const result2Half = document.getElementById('team2-result-halftime').value || '0';
-  const goals1 = document.getElementById('team1-goals').value || 'Tim Müller 42\' 43\' 44\'';
-  const goals2 = document.getElementById('team2-goals').value || 'Tim Müller 42\' 43\' 44\'';
+  const goals1 = document.getElementById('team1-goals').value || '';
+  const goals2 = document.getElementById('team2-goals').value || '';
 
   const day = document.getElementById('spieltag').value || '1';
 
@@ -31,7 +31,7 @@ function render() {
   ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
 
   const x = canvas.width / 2;
-  const y = 760;
+  const y = 400;
 
   const text = result1 + ':' + result2;
   const text2 = '(' + result1Half + ':' + result2Half + ')';
@@ -40,11 +40,11 @@ function render() {
   ctx.shadowBlur = 24;
   ctx.shadowOffsetX = 24;
   ctx.shadowOffsetY = 24;
-  ctx.drawImage(imgTeam1, x - 420, y-250, 220, 220);
-  ctx.drawImage(imgTeam2, x + 200, y-250, 220, 220);
+  ctx.drawImage(imgTeam1, x - 290, y-160, 150, 150);
+  ctx.drawImage(imgTeam2, x + 140, y-160, 150, 150);
 
   // Textstil
-  ctx.font = 'bold 120px Tahoma';
+  ctx.font = 'bold 90px Tahoma';
   ctx.fillStyle = 'white';
   ctx.textAlign = 'center';
   ctx.textBaseline = 'middle';
@@ -53,15 +53,15 @@ function render() {
   ctx.shadowOffsetX = 12;
   ctx.shadowOffsetY = 12;
   ctx.fillText(text, x, y-110);
-  ctx.font = 'bold 80px Tahoma';
-  ctx.fillText(text2, x, y+30);
-  ctx.font = 'bold 40px Tahoma';
+  ctx.font = 'bold 60px Tahoma';
+  ctx.fillText(text2, x, y-10);
+  ctx.font = 'bold 26px Tahoma';
   ctx.textBaseline = 'top';
   ctx.textAlign = 'left';
 
-  var leftX = x+60;
-  var lefyY = y+130;
-  var lineheight = 56;
+  var leftX = x+30;
+  var lefyY = y+60;
+  var lineheight = 50;
   var lines = goals2.split('\n');
 
   for (var i = 0; i<lines.length; i++)
@@ -69,20 +69,19 @@ function render() {
 
   ctx.textBaseline = 'top';
   ctx.textAlign = 'right';
-  leftX = x-60;
-  lefyY = y+130;
+  leftX = x-30;
+  lefyY = y+60;
   lines = goals1.split('\n');
   
   for (var i = 0; i<lines.length; i++)
       ctx.fillText(lines[i], leftX, lefyY + (i*lineheight) );
 
-  ctx.font = '58px Tahoma';
+  ctx.font = '38px Tahoma';
   ctx.textBaseline = 'top';
   ctx.textAlign = 'left';
   ctx.shadowOffsetX = 10;
   ctx.shadowOffsetY = 10;
-  ctx.fillText(day, 900, 312);
-  
+  ctx.fillText(day, 602, 160);
 }
 
 function downloadImage() {
