@@ -27,15 +27,15 @@
   <h1>
     Hallo, Mama.
   </h1>
-  <button onclick="resetProgress()">
+  <button onclick="resetProgress()" class="quiz-button">
     Reset
   </button>
-  <div style="border-right: 1px solid black; border-bottom: 1px solid black; width: fit-content;">
+  <div style="border-right: 1px solid black; border-bottom: 1px solid black; width: fit-content; margin-top: 16px;">
     <div style="display: flex; width: fit-content;">
-      <a class="preview-image-a" href="../quiz1.html">
+      <a class="preview-image-a" href="../quiz.html?id=1">
         <img src="../f32r3jkgfsjvsdgjlein.jpg" class="preview-image-image" style="object-position: 0 0;" id="quiz1"/>
       </a>
-      <a  class="preview-image-a" href="/">
+      <a  class="preview-image-a" href="../quiz.html?id=2">
         <img src="../f32r3jkgfsjvsdgjlein.jpg" class="preview-image-image" style="object-position: -200px 0;" id="quiz2"/>
       </a>
       <a  class="preview-image-a" href="/">
@@ -83,19 +83,21 @@ const quizzes = [
 ];
 
 function resetProgress() {
-  localStorage.setItem("quiz1_progress", 0);
+  for (let i = 1; i < 13; i++) {
+    localStorage.setItem("quiz" + i + "_progress", 0);
+  }
   loadProgress();
 }
 
 async function loadProgress() {
-  for (let i = 1; i < 16; i++) {
+  for (let i = 1; i < 13; i++) {
     let progress = parseInt(localStorage.getItem("quiz" + i + "_progress")) || 0;
     console.log(progress);
     let max = parseInt(localStorage.getItem("quiz" + i + "_max")) || 10;
     let ratio = progress / max;
     let element = document.getElementById("quiz" + i);
     element.style.opacity = ratio;
-}
+  }
 }
 
 loadProgress();

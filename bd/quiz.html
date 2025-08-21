@@ -8,39 +8,43 @@
 <body>
 
 <div class="page-padding">
-  <h1>Quiz 1</h1>
+  <h1 id="quiz-title"></h1>
   <a href="start/index.html" style="text-decoration: underline;">Zurück</a>
   <div id="progress"></div>
   <div id="quiz"></div>
 </div>
 
-<script>
-const questions = [
-  { 
-    q: "2+2?", 
-    a: "4", 
-    options: ["3", "4", "5", "22"] 
-  },
-  { 
-    q: "Hauptstadt von Frankreich?", 
-    a: "Paris", 
-    options: ["Berlin", "Madrid", "Paris", "Rom"] 
-  },
-  { 
-    q: "Farbe von Gras?", 
-    a: "Grün", 
-    options: ["Blau", "Gelb", "Grün", "Rot"] 
-  }
-];
+<script>const quizData = {
+  quiz1: [
+    { q: "2+2?", a: "4", options: ["3","4","5"] },
+    { q: "3*3?", a: "9", options: ["6","9","12"] }
+  ],
+  quiz2: [
+    { q: "Hauptstadt von Italien?", a: "Rom", options: ["Rom","Paris","Berlin"] },
+    { q: "5+7?", a: "12", options: ["11","12","13"] }
+  ]
+};
 
-const quizId = "quiz1";
+// URL-Parameter auslesen
+const params = new URLSearchParams(window.location.search);
+const quizId = "quiz" + params.get("id");
+
+// Sicherstellen, dass Quiz existiert
+if (!quizData[quizId]) {
+  document.body.innerHTML = "<p>Quiz nicht gefunden.</p>";
+  throw new Error("Ungültiges Quiz");
+}
+
+const questions = quizData[quizId];
 const max = questions.length;
-
-// Max immer abspeichern
 localStorage.setItem(quizId + "_max", max);
 
 // Lade Fortschritt (wie viele Fragen schon korrekt beantwortet)
 let progress = parseInt(localStorage.getItem(quizId + "_progress")) || 0;
+
+// Titel setzen
+document.getElementById("quiz-title").textContent = quizId.toUpperCase();
+
 
 function renderQuestion() {
   if (progress >= max) {
@@ -53,22 +57,22 @@ function renderQuestion() {
 
   // Fortschrittsanzeige
   document.getElementById("progress").innerHTML = `
-    <p><b>Frage ${progress + 1} von ${max}</b></p>
-    <progress value="${progress}" max="${max}"></progress>
+    <progress style="margin: 12px 0 0 0" value="${progress}" max="${max}"></progress>
+    <p style="margin: 0"><b>Frage ${progress + 1} von ${max}</b></p>
   `;
 
   // Frage + Antwortoptionen
   let optionsHtml = q.options.map((opt, i) => `
-    <label style="display:block;margin:4px 0;">
-      <input type="radio" name="answer" value="${opt}">
+    <label  class="answer-label" style="display:block;margin:4px 0;">
+      <input type="radio" class="answer" name="answer" value="${opt}">
       ${opt}
     </label>
   `).join("");
 
   document.getElementById("quiz").innerHTML = `
-    <p>${q.q}</p>
+    <h2>${q.q}</h2>
     ${optionsHtml}
-    <button onclick="checkAnswer()">Antwort prüfen</button>
+    <button onclick="checkAnswer()" class="quiz-button">Antwort prüfen</button>
   `;
 }
 

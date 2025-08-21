@@ -11,12 +11,57 @@
     src: url('fonts/Poppins.ttf');
 }
 
+progress {
+  height: 16px;
+  border-radius: 8px;
+  overflow: hidden; /* ensures rounding works */
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+/* Chrome, Safari, Edge */
+progress::-webkit-progress-bar {
+  background-color: #e0e0e0; /* light gray */
+  border-radius: 12px;
+}
+
+progress::-webkit-progress-value {
+  background-color: #005e8d; /* blue foreground */
+  border-radius: 12px; /* round both ends */
+  transition: width 0.3s ease;
+}
+
+/* Firefox */
+progress::-moz-progress-bar {
+  background-color: #2196f3; /* blue foreground */
+  border-radius: 12px; /* round both ends */
+  transition: width 0.3s ease;
+}
+
 html {
     font-family: Poppins;
     scroll-behavior: smooth;
     -webkit-user-select: none;
     -ms-user-select: none;
     user-select: none;
+}
+.quiz-button{
+    border: none;
+    background-color: #005e8d;
+    color: white;
+    padding: 12px;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.answer{
+    width: 16px;
+    height: 16px;
+}
+
+.answer-label{
+    font-size: 24px;
 }
 
 body:has(#gallery-popover.active) {
@@ -419,12 +464,12 @@ body:has(input:checked) .hero{
 		padding: 6px 12px;
 		color: #005e8d;
 		position: relative;
-		background-color: #white;
+		background-color: white;
 		filter: drop-shadow(4px 4px 4px #00000055);
 	}
 	
 	.hero button:hover{
-		border-color: background: #ffffffaa;
+		border-color:  #ffffffaa;
 	}
 	
 	.hero p{
