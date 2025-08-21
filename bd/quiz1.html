@@ -7,40 +7,97 @@
 </head>
 <body>
 
-<h1>Quiz 1</h1>
-<div id="questions"></div>
+<div class="page-padding">
+  <h1>Quiz 1</h1>
+  <a href="start/index.html" style="text-decoration: underline;">Zurück</a>
+  <div id="progress"></div>
+  <div id="quiz"></div>
+</div>
+
 <script>
 const questions = [
-  { q: "2+2?", a: "4" },
-  { q: "Hauptstadt von Frankreich?", a: "Paris" }
+  { 
+    q: "2+2?", 
+    a: "4", 
+    options: ["3", "4", "5", "22"] 
+  },
+  { 
+    q: "Hauptstadt von Frankreich?", 
+    a: "Paris", 
+    options: ["Berlin", "Madrid", "Paris", "Rom"] 
+  },
+  { 
+    q: "Farbe von Gras?", 
+    a: "Grün", 
+    options: ["Blau", "Gelb", "Grün", "Rot"] 
+  }
 ];
 
-let progress = 0;
-function render() {
-  const container = document.getElementById("questions");
-  container.innerHTML = "";
-  questions.forEach((q, i) => {
-    container.innerHTML += `
-      <p>${q.q}</p>
-      <input id="answer${i}" placeholder="Antwort">
-      <button onclick="check(${i})">Check</button>
-    `;
-  });
+const quizId = "quiz1";
+const max = questions.length;
+
+// Max immer abspeichern
+localStorage.setItem(quizId + "_max", max);
+
+// Lade Fortschritt (wie viele Fragen schon korrekt beantwortet)
+let progress = parseInt(localStorage.getItem(quizId + "_progress")) || 0;
+
+function renderQuestion() {
+  if (progress >= max) {
+    // Fertig → zurück zur Startseite
+    window.location.href = "start/index.html";
+    return;
+  }
+
+  const q = questions[progress];
+
+  // Fortschrittsanzeige
+  document.getElementById("progress").innerHTML = `
+    <p><b>Frage ${progress + 1} von ${max}</b></p>
+    <progress value="${progress}" max="${max}"></progress>
+  `;
+
+  // Frage + Antwortoptionen
+  let optionsHtml = q.options.map((opt, i) => `
+    <label style="display:block;margin:4px 0;">
+      <input type="radio" name="answer" value="${opt}">
+      ${opt}
+    </label>
+  `).join("");
+
+  document.getElementById("quiz").innerHTML = `
+    <p>${q.q}</p>
+    ${optionsHtml}
+    <button onclick="checkAnswer()">Antwort prüfen</button>
+  `;
 }
 
-function check(i) {
-  const userAnswer = document.getElementById("answer"+i).value;
-  if (userAnswer.toLowerCase() === questions[i].a.toLowerCase()) {
+function checkAnswer() {
+  const selected = document.querySelector('input[name="answer"]:checked');
+  if (!selected) {
+    alert("Bitte eine Antwort auswählen!");
+    return;
+  }
+
+  const userAnswer = selected.value;
+  const correctAnswer = questions[progress].a;
+
+  if (userAnswer === correctAnswer) {
     progress++;
-    localStorage.setItem("quiz1_progress", progress);
-    localStorage.setItem("quiz1_max", questions.length);
-    alert("Richtig!");
+    localStorage.setItem(quizId + "_progress", progress);
+
+    if (progress >= max) {
+      alert("Alle Fragen geschafft 🎉");
+      window.location.href = "start/index.html";
+    } else {
+      renderQuestion();
+    }
   } else {
-    alert("Falsch!");
+    alert("Falsch, versuch's nochmal!");
   }
 }
 
-render();
+renderQuestion();
 </script>
 </body>
 </html>

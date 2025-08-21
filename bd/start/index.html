@@ -41,16 +41,36 @@
       <a  class="preview-image-a" href="/">
         <img src="../f32r3jkgfsjvsdgjlein.jpg" class="preview-image-image" style="object-position: -400px 0;" id="quiz3"/>
       </a>
+      <a  class="preview-image-a" href="/">
+        <img src="../f32r3jkgfsjvsdgjlein.jpg" class="preview-image-image" style="object-position: -600px 0;" id="quiz4"/>
+      </a>
     </div>
     <div style="display: flex; width: fit-content;">
       <a class="preview-image-a" href="/">
-        <img src="../f32r3jkgfsjvsdgjlein.jpg" class="preview-image-image" style="object-position: 0 -200px;" id="quiz4"/>
+        <img src="../f32r3jkgfsjvsdgjlein.jpg" class="preview-image-image" style="object-position: 0 -200px;" id="quiz5"/>
       </a>
       <a class="preview-image-a" href="/">
-        <img src="../f32r3jkgfsjvsdgjlein.jpg" class="preview-image-image" style="object-position: -200px -200px;" id="quiz5"/>
+        <img src="../f32r3jkgfsjvsdgjlein.jpg" class="preview-image-image" style="object-position: -200px -200px;" id="quiz6"/>
       </a>
       <a class="preview-image-a" href="/">
-        <img src="../f32r3jkgfsjvsdgjlein.jpg" class="preview-image-image" style="object-position: -400px -200px;" id="quiz6"/>
+        <img src="../f32r3jkgfsjvsdgjlein.jpg" class="preview-image-image" style="object-position: -400px -200px;" id="quiz7"/>
+      </a>
+      <a class="preview-image-a" href="/">
+        <img src="../f32r3jkgfsjvsdgjlein.jpg" class="preview-image-image" style="object-position: -600px -200px;" id="quiz8"/>
+      </a>
+    </div>
+    <div style="display: flex; width: fit-content;">
+      <a class="preview-image-a" href="/">
+        <img src="../f32r3jkgfsjvsdgjlein.jpg" class="preview-image-image" style="object-position: 0 -400px;" id="quiz9"/>
+      </a>
+      <a class="preview-image-a" href="/">
+        <img src="../f32r3jkgfsjvsdgjlein.jpg" class="preview-image-image" style="object-position: -200px -400px;" id="quiz10"/>
+      </a>
+      <a class="preview-image-a" href="/">
+        <img src="../f32r3jkgfsjvsdgjlein.jpg" class="preview-image-image" style="object-position: -400px -400px;" id="quiz11"/>
+      </a>
+      <a class="preview-image-a" href="/">
+        <img src="../f32r3jkgfsjvsdgjlein.jpg" class="preview-image-image" style="object-position: -600px -400px;" id="quiz12"/>
       </a>
     </div>
   </div>
@@ -68,13 +88,13 @@ function resetProgress() {
 }
 
 async function loadProgress() {
-  for (let i = 1; i < 7; i++) {
+  for (let i = 1; i < 16; i++) {
     let progress = parseInt(localStorage.getItem("quiz" + i + "_progress")) || 0;
     console.log(progress);
     let max = parseInt(localStorage.getItem("quiz" + i + "_max")) || 10;
     let ratio = progress / max;
     let element = document.getElementById("quiz" + i);
-    element.style.opacity = 1;
+    element.style.opacity = ratio;
 }
 }
 
