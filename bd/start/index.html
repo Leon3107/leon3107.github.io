@@ -7,6 +7,22 @@
 </head>
 <body>
 
+  <style>
+    .preview-image-a{
+      width: 200px; 
+      height: 200px; 
+      overflow: hidden; 
+      background-color: lightgoldenrodyellow; 
+      box-shadow: inset 1px 1px 0px black;
+    }
+    .preview-image-image{
+      opacity: 0;
+      width: 200px; 
+      height: 200px; 
+      object-fit: none; 
+    }
+  </style>
+
 <div class="page-padding">
   <h1>
     Hallo, Mama.
@@ -14,21 +30,29 @@
   <button onclick="resetProgress()">
     Reset
   </button>
-  <div style="display: flex;">
-    <a style="width: 100px; height: 100px; overflow: hidden; background-color: gray;" href="../quiz1.html">
-      <img src="../../images/Animals/LKZ_2456.jpg" style="width: 100px; height: 100px; object-fit: none; opacity: 0;" id="quiz1"/>
-    </a>
-    <a style="width: 100px; height: 100px; overflow: hidden;" href="/">
-      <img src="../../images/Animals/LKZ_2456.jpg" style="width: 100px; height: 100px; object-fit: none;"/>
-    </a>
-  </div>
-  <div style="display: flex;">
-    <a style="width: 100px; height: 100px; overflow: hidden;" href="/">
-      <img src="../../images/Animals/LKZ_2456.jpg" style="width: 100px; height: 100px; object-fit: none;"/>
-    </a>
-    <a style="width: 100px; height: 100px; overflow: hidden;" href="/">
-      <img src="../../images/Animals/LKZ_2456.jpg" style="width: 100px; height: 100px; object-fit: none;"/>
-    </a>
+  <div style="border-right: 1px solid black; border-bottom: 1px solid black; width: fit-content;">
+    <div style="display: flex; width: fit-content;">
+      <a class="preview-image-a" href="../quiz1.html">
+        <img src="../f32r3jkgfsjvsdgjlein.jpg" class="preview-image-image" style="object-position: 0 0;" id="quiz1"/>
+      </a>
+      <a  class="preview-image-a" href="/">
+        <img src="../f32r3jkgfsjvsdgjlein.jpg" class="preview-image-image" style="object-position: -200px 0;" id="quiz2"/>
+      </a>
+      <a  class="preview-image-a" href="/">
+        <img src="../f32r3jkgfsjvsdgjlein.jpg" class="preview-image-image" style="object-position: -400px 0;" id="quiz3"/>
+      </a>
+    </div>
+    <div style="display: flex; width: fit-content;">
+      <a class="preview-image-a" href="/">
+        <img src="../f32r3jkgfsjvsdgjlein.jpg" class="preview-image-image" style="object-position: 0 -200px;" id="quiz4"/>
+      </a>
+      <a class="preview-image-a" href="/">
+        <img src="../f32r3jkgfsjvsdgjlein.jpg" class="preview-image-image" style="object-position: -200px -200px;" id="quiz5"/>
+      </a>
+      <a class="preview-image-a" href="/">
+        <img src="../f32r3jkgfsjvsdgjlein.jpg" class="preview-image-image" style="object-position: -400px -200px;" id="quiz6"/>
+      </a>
+    </div>
   </div>
 </div>
 
@@ -44,12 +68,14 @@ function resetProgress() {
 }
 
 async function loadProgress() {
-    let progress = parseInt(localStorage.getItem("quiz1_progress")) || 0;
+  for (let i = 1; i < 7; i++) {
+    let progress = parseInt(localStorage.getItem("quiz" + i + "_progress")) || 0;
     console.log(progress);
-    let max = parseInt(localStorage.getItem("quiz1_max")) || 10;
+    let max = parseInt(localStorage.getItem("quiz" + i + "_max")) || 10;
     let ratio = progress / max;
-    let element = document.getElementById("quiz1");
-    element.style.opacity = ratio;
+    let element = document.getElementById("quiz" + i);
+    element.style.opacity = 1;
+}
 }
 
 loadProgress();
