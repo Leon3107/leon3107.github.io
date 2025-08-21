@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Geburtstagsquiz</title>
+  <link rel="stylesheet" href="../index.css">
+</head>
+<body>
+
+<h1>Quiz 1</h1>
+<div id="questions"></div>
+<script>
+const questions = [
+  { q: "2+2?", a: "4" },
+  { q: "Hauptstadt von Frankreich?", a: "Paris" }
+];
+
+let progress = 0;
+function render() {
+  const container = document.getElementById("questions");
+  container.innerHTML = "";
+  questions.forEach((q, i) => {
+    container.innerHTML += `
+      <p>${q.q}</p>
+      <input id="answer${i}" placeholder="Antwort">
+      <button onclick="check(${i})">Check</button>
+    `;
+  });
+}
+
+function check(i) {
+  const userAnswer = document.getElementById("answer"+i).value;
+  if (userAnswer.toLowerCase() === questions[i].a.toLowerCase()) {
+    progress++;
+    localStorage.setItem("quiz1_progress", progress);
+    localStorage.setItem("quiz1_max", questions.length);
+    alert("Richtig!");
+  } else {
+    alert("Falsch!");
+  }
+}
+
+render();
+</script>
+</body>
+</html>
