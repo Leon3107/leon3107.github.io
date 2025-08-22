@@ -40,7 +40,10 @@
   <p style="margin: 12px 0 0 0">
     Löse alle quizfelder, um dein Geschenk zu sehen.
   </p>
-  <button onclick="resetProgress()" class="quiz-button">
+  <p style="margin: 4px 0 0 0">
+    Falls du denkst, dein Geschenk erraten zu haben, kannst du das Wort unten eingeben und schauen, ob es richtig ist.
+  </p>
+  <button onclick="resetProgress()" class="quiz-button" style="display: none;">
     Reset
   </button>
   <div style="border-right: 1px solid black; border-bottom: 1px solid black; width: fit-content; margin-top: 16px;">
@@ -51,38 +54,38 @@
       <a  class="preview-image-a" href="../quiz.html?id=2">
         <img src="../f32r3jkgfsjvsdgjleins.png" class="preview-image-image" style="object-position: -200px 0;" id="quiz2"/>
       </a>
-      <a  class="preview-image-a" href="/">
+      <a  class="preview-image-a" href="../quiz.html?id=3">
         <img src="../f32r3jkgfsjvsdgjleins.png" class="preview-image-image" style="object-position: -400px 0;" id="quiz3"/>
       </a>
-      <a  class="preview-image-a" href="/">
+      <a  class="preview-image-a" href="../quiz.html?id=4">
         <img src="../f32r3jkgfsjvsdgjleins.png" class="preview-image-image" style="object-position: -600px 0;" id="quiz4"/>
       </a>
     </div>
     <div style="display: flex; width: fit-content;">
-      <a class="preview-image-a" href="/">
+      <a class="preview-image-a" href="../quiz.html?id=5">
         <img src="../f32r3jkgfsjvsdgjleins.png" class="preview-image-image" style="object-position: 0 -150px;" id="quiz5"/>
       </a>
-      <a class="preview-image-a" href="/">
+      <a class="preview-image-a" href="../quiz.html?id=6">
         <img src="../f32r3jkgfsjvsdgjleins.png" class="preview-image-image" style="object-position: -200px -150px;" id="quiz6"/>
       </a>
-      <a class="preview-image-a" href="/">
+      <a class="preview-image-a" href="../quiz.html?id=7">
         <img src="../f32r3jkgfsjvsdgjleins.png" class="preview-image-image" style="object-position: -400px -150px;" id="quiz7"/>
       </a>
-      <a class="preview-image-a" href="/">
+      <a class="preview-image-a" href="../quiz.html?id=8">
         <img src="../f32r3jkgfsjvsdgjleins.png" class="preview-image-image" style="object-position: -600px -150px;" id="quiz8"/>
       </a>
     </div>
     <div style="display: flex; width: fit-content;">
-      <a class="preview-image-a" href="/">
+      <a class="preview-image-a" href="../quiz.html?id=9">
         <img src="../f32r3jkgfsjvsdgjleins.png" class="preview-image-image" style="object-position: 0 -300px;" id="quiz9"/>
       </a>
-      <a class="preview-image-a" href="/">
+      <a class="preview-image-a" href="../quiz.html?id=10">
         <img src="../f32r3jkgfsjvsdgjleins.png" class="preview-image-image" style="object-position: -200px -300px;" id="quiz10"/>
       </a>
-      <a class="preview-image-a" href="/">
+      <a class="preview-image-a" href="../quiz.html?id=11">
         <img src="../f32r3jkgfsjvsdgjleins.png" class="preview-image-image" style="object-position: -400px -300px;" id="quiz11"/>
       </a>
-      <a class="preview-image-a" href="/">
+      <a class="preview-image-a" href="../quiz.html?id=12">
         <img src="../f32r3jkgfsjvsdgjleins.png" class="preview-image-image" style="object-position: -600px -300px;" id="quiz12"/>
       </a>
     </div>
@@ -96,15 +99,13 @@
 </div>
 
 <script>
-const quizzes = [
-  { id: "quiz1", title: "Quiz 1" },
-  { id: "quiz2", title: "Quiz 2" },
-  { id: "quiz3", title: "Quiz 3" },
-];
-
 function checkSolution(){
   let solution = document.getElementById("solution").value;
-  if(solution == "gornergratbahn" || solution == "Gornergratbahn"){
+  if(solution == "gornergratbahn" ||
+   solution == "Gornergratbahn" || 
+   solution == "Gornergrat-Bahn" || 
+   solution == "Gornergrat-bahn" || 
+   solution == "gornergrat-bahn"){
     for (let i = 1; i < 13; i++) {
       localStorage.setItem("quiz" + i + "_progress", 100);
     }

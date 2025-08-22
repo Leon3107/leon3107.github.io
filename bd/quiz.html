@@ -7,9 +7,9 @@
 </head>
 <body>
 
-<div class="page-padding">
-  <h1 id="quiz-title"></h1>
+<div class="page-padding" style="padding-top: 24px;">
   <a href="start/index.html" style="text-decoration: underline;">Zurück</a>
+  <h2 id="quiz-title"></h2>
   <div id="progress"></div>
   <div id="quiz"></div>
 </div>
@@ -20,6 +20,46 @@
     { q: "3*3?", a: "9", options: ["6","9","12"] }
   ],
   quiz2: [
+    { q: "Hauptstadt von Italien?", a: "Rom", options: ["Rom","Paris","Berlin"] },
+    { q: "5+7?", a: "12", options: ["11","12","13"] }
+  ],
+  quiz3: [
+    { q: "Hauptstadt von Italien?", a: "Rom", options: ["Rom","Paris","Berlin"] },
+    { q: "5+7?", a: "12", options: ["11","12","13"] }
+  ],
+  quiz4: [
+    { q: "Hauptstadt von Italien?", a: "Rom", options: ["Rom","Paris","Berlin"] },
+    { q: "5+7?", a: "12", options: ["11","12","13"] }
+  ],
+  quiz5: [
+    { q: "Hauptstadt von Italien?", a: "Rom", options: ["Rom","Paris","Berlin"] },
+    { q: "5+7?", a: "12", options: ["11","12","13"] }
+  ],
+  quiz6: [
+    { q: "Hauptstadt von Italien?", a: "Rom", options: ["Rom","Paris","Berlin"] },
+    { q: "5+7?", a: "12", options: ["11","12","13"] }
+  ],
+  quiz7: [
+    { q: "Hauptstadt von Italien?", a: "Rom", options: ["Rom","Paris","Berlin"] },
+    { q: "5+7?", a: "12", options: ["11","12","13"] }
+  ],
+  quiz8: [
+    { q: "Hauptstadt von Italien?", a: "Rom", options: ["Rom","Paris","Berlin"] },
+    { q: "5+7?", a: "12", options: ["11","12","13"] }
+  ],
+  quiz9: [
+    { q: "Hauptstadt von Italien?", a: "Rom", options: ["Rom","Paris","Berlin"] },
+    { q: "5+7?", a: "12", options: ["11","12","13"] }
+  ],
+  quiz10: [
+    { q: "Hauptstadt von Italien?", a: "Rom", options: ["Rom","Paris","Berlin"] },
+    { q: "5+7?", a: "12", options: ["11","12","13"] }
+  ],
+  quiz11: [
+    { q: "Hauptstadt von Italien?", a: "Rom", options: ["Rom","Paris","Berlin"] },
+    { q: "5+7?", a: "12", options: ["11","12","13"] }
+  ],
+  quiz12: [
     { q: "Hauptstadt von Italien?", a: "Rom", options: ["Rom","Paris","Berlin"] },
     { q: "5+7?", a: "12", options: ["11","12","13"] }
   ]
@@ -43,7 +83,7 @@ localStorage.setItem(quizId + "_max", max);
 let progress = parseInt(localStorage.getItem(quizId + "_progress")) || 0;
 
 // Titel setzen
-document.getElementById("quiz-title").textContent = quizId.toUpperCase();
+document.getElementById("quiz-title").textContent = "Quiz " + params.get("id");
 
 
 function renderQuestion() {
