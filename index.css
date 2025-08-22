@@ -49,9 +49,9 @@ html {
     border: none;
     background-color: #005e8d;
     color: white;
-    padding: 12px;
+    padding: 16px;
     border-radius: 12px;
-    font-size: 22px;
+    font-size: 28px;
     font-weight: 600;
 }
 
@@ -61,7 +61,7 @@ html {
 }
 
 .answer-label{
-    font-size: 36px;
+    font-size: 48px;
 }
 
 body:has(#gallery-popover.active) {
