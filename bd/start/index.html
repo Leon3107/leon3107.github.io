@@ -29,14 +29,6 @@
        border-radius: 12px;
        width: 256px;
     }
-    .scale-wrapper {
-      display: inline-block;       /* shrink-wrap to content */
-      transform: scale(0.7);
-      transform-origin: top left;
-      overflow: hidden;            /* cut away the reserved space */
-      width: calc(100% * 0.7);   /* shrink width in flow */
-      height: calc(100% * 0.7);  /* shrink height in flow */   
-    }
     a.preview-image-a:has(img.disable){
       pointer-events: none;
       background-color: lightgray;
@@ -56,7 +48,6 @@
   <button onclick="resetProgress()" class="quiz-button" style="display: none;">
     Reset
   </button>
-  <div class="scale-wrapper">
     <div style="border-right: 1px solid black; border-bottom: 1px solid black; width: fit-content; margin-top: 16px;">
       <div style="display: flex; width: fit-content;">
         <a class="preview-image-a" href="../quiz.html?id=1">
@@ -101,7 +92,6 @@
         </a>
       </div>
     </div>
-  </div>
   <div class="horizontal-stack">
     <input preview="Lösung" id="solution">
     <button onclick="checkSolution()" class="quiz-button">
