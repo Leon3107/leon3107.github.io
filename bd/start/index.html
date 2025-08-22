@@ -12,7 +12,7 @@
       width: 200px; 
       height: 200px; 
       overflow: hidden; 
-      background-color: lightgoldenrodyellow; 
+      background-color: lightgreen; 
       box-shadow: inset 1px 1px 0px black;
     }
     .preview-image-image{
@@ -20,6 +20,10 @@
       width: 200px; 
       height: 200px; 
       object-fit: none; 
+    }
+    a>img.disable{
+      pointer-events: none;
+      background-color: lightgray;
     }
   </style>
 
@@ -74,13 +78,33 @@
       </a>
     </div>
   </div>
+  <div class="horizontal-stack">
+    <input preview="Lösung" id="solution">
+    <button onclick="checkSolution()" class="quiz-button">
+      Prüfen
+    </button>
+  </div>
 </div>
 
 <script>
 const quizzes = [
   { id: "quiz1", title: "Quiz 1" },
-  { id: "quiz2", title: "Quiz 2" }
+  { id: "quiz2", title: "Quiz 2" },
+  { id: "quiz3", title: "Quiz 3" },
 ];
+
+function checkSolution(){
+  let solution = document.getElementById("solution").value;
+  if(solution == "gornergratbahn" || solution == "Gornergratbahn"){
+    for (let i = 1; i < 13; i++) {
+      localStorage.setItem("quiz" + i + "_progress", 100);
+    }
+    loadProgress();
+  }
+  else{
+    alert("Oh man, das war schlecht...");
+  }
+}
 
 function resetProgress() {
   for (let i = 1; i < 13; i++) {
@@ -90,6 +114,7 @@ function resetProgress() {
 }
 
 async function loadProgress() {
+  let foundActive = false;
   for (let i = 1; i < 13; i++) {
     let progress = parseInt(localStorage.getItem("quiz" + i + "_progress")) || 0;
     console.log(progress);
@@ -97,6 +122,12 @@ async function loadProgress() {
     let ratio = progress / max;
     let element = document.getElementById("quiz" + i);
     element.style.opacity = ratio;
+    if(ratio < 1){
+      if(!foundActive){
+        element.classList.add("disable");
+      }
+      foundActive = true;
+    }
   }
 }
 
