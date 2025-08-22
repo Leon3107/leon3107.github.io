@@ -13,7 +13,6 @@
       height: 150px; 
       overflow: hidden; 
       background-color: lightgreen; 
-      box-shadow: inset 1px 1px 0px black;
       position: relative;
     }
     .preview-image-image{
@@ -43,10 +42,10 @@
   <p style="margin: 4px 0 0 0; font-size: 15px;">
       Falls du denkst, dein Geschenk erraten zu haben, kannst du das Wort unten eingeben und schauen, ob es richtig ist. Dann wird das ganze Bild sichtbar.
   </p>
-  <button onclick="resetProgress()" class="quiz-button" style="display: none;">
+  <button onclick="resetProgress()" class="quiz-button" style="display: block;">
     Reset
   </button>
-    <div style="border-right: 1px solid black; border-bottom: 1px solid black; width: fit-content; margin-top: 16px;">
+    <div style="width: fit-content; margin-top: 16px; border: 1px solid gray; border-radius: 12px; overflow: hidden;">
       <div style="display: flex; width: fit-content;">
         <a class="preview-image-a" href="../quiz.html?id=1">
           <img src="../f32r3jkgfsjvsdgjleins.png" class="preview-image-image" style="object-position: 0 0;" id="quiz1"/>
@@ -90,7 +89,7 @@
         </a>
       </div>
     </div>
-  <div class="horizontal-stack" style="margin-top: 24px; scale: 1.2; transform-origin: top left;">
+  <div class="horizontal-stack" style="margin-top: 24px; scale: 1.2; transform-origin: top left; width: fit-content;">
     <input preview="Lösung" id="solution">
     <button onclick="checkSolution()" class="quiz-button" style="margin-left: 12px;">
       Prüfen
@@ -101,11 +100,8 @@
 <script>
 function checkSolution(){
   let solution = document.getElementById("solution").value;
-  if(solution == "gornergratbahn" ||
-   solution == "Gornergratbahn" || 
-   solution == "Gornergrat-Bahn" || 
-   solution == "Gornergrat-bahn" || 
-   solution == "gornergrat-bahn"){
+  if(solution.toUpperCase() == "GORNERGRATBAHN" ||
+   solution.toUpperCase() == "GORNERGRAT-BAHN"){
     for (let i = 1; i < 13; i++) {
       localStorage.setItem("quiz" + i + "_progress", 100);
     }
