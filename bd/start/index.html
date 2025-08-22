@@ -34,9 +34,12 @@
   </style>
 
 <div class="page-padding">
-  <h1>
-    Hallo, Mama.
-  </h1>
+  <h2 style="margin: 12px 0 0 0">
+    Alles gute zum Geburtstag!
+  </h2>
+  <p style="margin: 12px 0 0 0">
+    Löse alle quizfelder, um dein Geschenk zu sehen.
+  </p>
   <button onclick="resetProgress()" class="quiz-button">
     Reset
   </button>
@@ -128,6 +131,7 @@ async function loadProgress() {
     let ratio = progress / max;
     let element = document.getElementById("quiz" + i);
     element.style.opacity = ratio;
+    element.setAttribute('draggable', false);
     if(ratio < 1){
       if(foundActive){
         element.classList.add("disable");
