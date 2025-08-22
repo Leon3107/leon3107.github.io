@@ -62,6 +62,10 @@ html {
 
 .answer-label{
     font-size: 32px;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    gap: 6px;
 }
 
 body:has(#gallery-popover.active) {
