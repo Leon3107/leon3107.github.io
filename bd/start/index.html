@@ -8,8 +8,6 @@
 <body>
 
   <style>
-    body { zoom: 1.2; -moz-transform: scale(1.2); -moz-transform-origin: 0 0}
-
     a.preview-image-a{
       width: 200px; 
       height: 150px; 
@@ -35,14 +33,14 @@
     }
   </style>
 
-<div style="padding-top: 24px; padding-left: 32px; padding-right: 32px;">
+<div style="padding-top: 24px; padding-left: 16px; padding-right: 16px;">
   <h2 style="margin: 12px 0 0 0">
     Alles gute zum Geburtstag!
   </h2>
-  <p style="margin: 12px 0 0 0; font-size: 12px;">
+  <p style="margin: 12px 0 0 0; font-size: 15px;">
     Löse alle quizfelder, um dein Geschenk zu sehen.
   </p>
-  <p style="margin: 4px 0 0 0; font-size: 12px;">
+  <p style="margin: 4px 0 0 0; font-size: 15px;">
       Falls du denkst, dein Geschenk erraten zu haben, kannst du das Wort unten eingeben und schauen, ob es richtig ist. Dann wird das ganze Bild sichtbar.
   </p>
   <button onclick="resetProgress()" class="quiz-button" style="display: none;">
@@ -92,7 +90,7 @@
         </a>
       </div>
     </div>
-  <div class="horizontal-stack" style="margin-top: 24px;">
+  <div class="horizontal-stack" style="margin-top: 24px; scale: 1.2; transform-origin: top left;">
     <input preview="Lösung" id="solution">
     <button onclick="checkSolution()" class="quiz-button" style="margin-left: 12px;">
       Prüfen
