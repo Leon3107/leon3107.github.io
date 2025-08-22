@@ -8,20 +8,21 @@
 <body>
 
   <style>
-    .preview-image-a{
+    a.preview-image-a{
       width: 200px; 
-      height: 200px; 
+      height: 150px; 
       overflow: hidden; 
       background-color: lightgreen; 
       box-shadow: inset 1px 1px 0px black;
+      position: relative;
     }
     .preview-image-image{
       opacity: 0;
       width: 200px; 
-      height: 200px; 
+      height: 150px; 
       object-fit: none; 
     }
-    a:has(img.disable){
+    a.preview-image-a:has(img.disable){
       pointer-events: none;
       background-color: lightgray;
     }
@@ -37,44 +38,44 @@
   <div style="border-right: 1px solid black; border-bottom: 1px solid black; width: fit-content; margin-top: 16px;">
     <div style="display: flex; width: fit-content;">
       <a class="preview-image-a" href="../quiz.html?id=1">
-        <img src="../f32r3jkgfsjvsdgjlein.jpg" class="preview-image-image" style="object-position: 0 0;" id="quiz1"/>
+        <img src="../f32r3jkgfsjvsdgjlein.png" class="preview-image-image" style="object-position: 0 0;" id="quiz1"/>
       </a>
       <a  class="preview-image-a" href="../quiz.html?id=2">
-        <img src="../f32r3jkgfsjvsdgjlein.jpg" class="preview-image-image" style="object-position: -200px 0;" id="quiz2"/>
+        <img src="../f32r3jkgfsjvsdgjlein.png" class="preview-image-image" style="object-position: -200px 0;" id="quiz2"/>
       </a>
       <a  class="preview-image-a" href="/">
-        <img src="../f32r3jkgfsjvsdgjlein.jpg" class="preview-image-image" style="object-position: -400px 0;" id="quiz3"/>
+        <img src="../f32r3jkgfsjvsdgjlein.png" class="preview-image-image" style="object-position: -400px 0;" id="quiz3"/>
       </a>
       <a  class="preview-image-a" href="/">
-        <img src="../f32r3jkgfsjvsdgjlein.jpg" class="preview-image-image" style="object-position: -600px 0;" id="quiz4"/>
+        <img src="../f32r3jkgfsjvsdgjlein.png" class="preview-image-image" style="object-position: -600px 0;" id="quiz4"/>
       </a>
     </div>
     <div style="display: flex; width: fit-content;">
       <a class="preview-image-a" href="/">
-        <img src="../f32r3jkgfsjvsdgjlein.jpg" class="preview-image-image" style="object-position: 0 -200px;" id="quiz5"/>
+        <img src="../f32r3jkgfsjvsdgjlein.png" class="preview-image-image" style="object-position: 0 -150px;" id="quiz5"/>
       </a>
       <a class="preview-image-a" href="/">
-        <img src="../f32r3jkgfsjvsdgjlein.jpg" class="preview-image-image" style="object-position: -200px -200px;" id="quiz6"/>
+        <img src="../f32r3jkgfsjvsdgjlein.png" class="preview-image-image" style="object-position: -200px -150px;" id="quiz6"/>
       </a>
       <a class="preview-image-a" href="/">
-        <img src="../f32r3jkgfsjvsdgjlein.jpg" class="preview-image-image" style="object-position: -400px -200px;" id="quiz7"/>
+        <img src="../f32r3jkgfsjvsdgjlein.png" class="preview-image-image" style="object-position: -400px -150px;" id="quiz7"/>
       </a>
       <a class="preview-image-a" href="/">
-        <img src="../f32r3jkgfsjvsdgjlein.jpg" class="preview-image-image" style="object-position: -600px -200px;" id="quiz8"/>
+        <img src="../f32r3jkgfsjvsdgjlein.png" class="preview-image-image" style="object-position: -600px -150px;" id="quiz8"/>
       </a>
     </div>
     <div style="display: flex; width: fit-content;">
       <a class="preview-image-a" href="/">
-        <img src="../f32r3jkgfsjvsdgjlein.jpg" class="preview-image-image" style="object-position: 0 -400px;" id="quiz9"/>
+        <img src="../f32r3jkgfsjvsdgjlein.png" class="preview-image-image" style="object-position: 0 -300px;" id="quiz9"/>
       </a>
       <a class="preview-image-a" href="/">
-        <img src="../f32r3jkgfsjvsdgjlein.jpg" class="preview-image-image" style="object-position: -200px -400px;" id="quiz10"/>
+        <img src="../f32r3jkgfsjvsdgjlein.png" class="preview-image-image" style="object-position: -200px -300px;" id="quiz10"/>
       </a>
       <a class="preview-image-a" href="/">
-        <img src="../f32r3jkgfsjvsdgjlein.jpg" class="preview-image-image" style="object-position: -400px -400px;" id="quiz11"/>
+        <img src="../f32r3jkgfsjvsdgjlein.png" class="preview-image-image" style="object-position: -400px -300px;" id="quiz11"/>
       </a>
       <a class="preview-image-a" href="/">
-        <img src="../f32r3jkgfsjvsdgjlein.jpg" class="preview-image-image" style="object-position: -600px -400px;" id="quiz12"/>
+        <img src="../f32r3jkgfsjvsdgjlein.png" class="preview-image-image" style="object-position: -600px -300px;" id="quiz12"/>
       </a>
     </div>
   </div>
@@ -123,10 +124,13 @@ async function loadProgress() {
     let element = document.getElementById("quiz" + i);
     element.style.opacity = ratio;
     if(ratio < 1){
-      if(!foundActive){
+      if(foundActive){
         element.classList.add("disable");
       }
       foundActive = true;
+    }
+    if(ratio ==1){
+        element.classList.add("no-text");
     }
   }
 }
