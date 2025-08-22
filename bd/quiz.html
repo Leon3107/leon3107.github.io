@@ -91,7 +91,6 @@ function checkAnswer() {
     localStorage.setItem(quizId + "_progress", progress);
 
     if (progress >= max) {
-      alert("Alle Fragen geschafft 🎉");
       window.location.href = "start/index.html";
     } else {
       renderQuestion();

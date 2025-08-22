@@ -23,7 +23,9 @@
       object-fit: none; 
     }
     input{
-      height: 48px;
+      height: 40px;
+       border-radius: 12px;
+       width: 256px;
     }
     a.preview-image-a:has(img.disable){
       pointer-events: none;
@@ -82,7 +84,7 @@
       </a>
     </div>
   </div>
-  <div class="horizontal-stack">
+  <div class="horizontal-stack" style="margin-top: 12px;">
     <input preview="Lösung" id="solution">
     <button onclick="checkSolution()" class="quiz-button">
       Prüfen
