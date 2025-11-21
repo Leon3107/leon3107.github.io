@@ -12,7 +12,7 @@
 
     html, body {
       height: 100%;
-      overflow: hidden; /* Wir scrollen nur im Container horizontal */
+      overflow: hidden;
       font-family: "Georgia", serif;
       background: #f3e5c8;
       color: #4a3b2a;
@@ -26,7 +26,6 @@
       background: #d2b48c;
     }
 
-    /* Hintergrund-Ebene für Parallax-Effekt */
     .parallax-bg {
       position: absolute;
       inset: -10%;
@@ -47,13 +46,12 @@
       content: "";
       position: absolute;
       inset: 0;
-      background-image: url("ttps://grainy-gradients.vercel.app/noise.svg");
+      background-image: url("https://upload.wikimedia.org/wikipedia/commons/0/09/Noise_Texture.jpg");
       mix-blend-mode: soft-light;
       opacity: 0.35;
       pointer-events: none;
     }
 
-    /* Container mit den Bildern, der horizontal scrollt */
     .scroll-container {
       position: relative;
       z-index: 1;
@@ -65,8 +63,6 @@
       overflow-x: auto;
       overflow-y: hidden;
       scroll-behavior: smooth;
-      scroll-snap-type: x mandatory;
-      scroll-padding-inline: 15vw;
     }
 
     .scroll-container::-webkit-scrollbar {
@@ -83,40 +79,24 @@
     }
 
     .item {
-      scroll-snap-align: center;
       flex: 0 0 auto;
-      background: rgba(255, 252, 240, 0.95);
-      padding: 1rem;
-      border-radius: 12px;
-      border: 1px solid rgba(120, 90, 60, 0.4);
-      box-shadow:
-        0 15px 25px rgba(0, 0, 0, 0.35),
-        0 0 0 10px rgba(255, 255, 255, 0.4);
+      background: transparent;
+      border-radius: 8px;
       max-width: 320px;
       transform-origin: center center;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow:
+        0 15px 25px rgba(0, 0, 0, 0.35),
+        0 0 0 10px rgba(255, 255, 255, 0.4);
     }
 
-    /* Muster wiederholt sich für beliebig viele Bilder:
-       unterschiedliche Höhe + leichte Rotation */
-    .item:nth-child(6n + 1) {
-      transform: rotate(-4deg) translateY(-20px);
-    }
-    .item:nth-child(6n + 2) {
-      transform: rotate(2deg) translateY(10px);
-    }
-    .item:nth-child(6n + 3) {
-      transform: rotate(-2deg) translateY(-40px);
-    }
-    .item:nth-child(6n + 4) {
-      transform: rotate(3deg) translateY(30px);
-    }
-    .item:nth-child(6n + 5) {
-      transform: rotate(-3deg) translateY(-10px);
-    }
-    .item:nth-child(6n + 6) {
-      transform: rotate(1.5deg) translateY(25px);
-    }
+    /* verschiedene Höhen + Drehungen, wiederholt sich für beliebig viele Bilder */
+    .item:nth-child(6n + 1) { transform: rotate(-4deg) translateY(-20px); }
+    .item:nth-child(6n + 2) { transform: rotate( 2deg) translateY( 10px); }
+    .item:nth-child(6n + 3) { transform: rotate(-2deg) translateY(-40px); }
+    .item:nth-child(6n + 4) { transform: rotate( 3deg) translateY( 30px); }
+    .item:nth-child(6n + 5) { transform: rotate(-3deg) translateY(-10px); }
+    .item:nth-child(6n + 6) { transform: rotate( 1.5deg) translateY(25px); }
 
     .item:hover {
       transform: scale(1.04) translateY(0) rotate(0deg);
@@ -125,12 +105,46 @@
         0 0 0 12px rgba(255, 255, 255, 0.7);
     }
 
-    .item img {
-      display: block;
-      width: 100%;
-      height: auto;
+    /* FILMLOOK-RAND */
+    .film-frame {
+      position: relative;
+      padding: 1.2rem;
+      background: #111;
       border-radius: 6px;
-      filter: sepia(0.3) contrast(1.05) saturate(0.8);
+      overflow: hidden;
+    }
+
+    /* Sprocket-Holes links & rechts */
+    .film-frame::before,
+    .film-frame::after {
+      content: "";
+      position: absolute;
+      top: 10%;
+      bottom: 10%;
+      width: 14px;
+      background-image: radial-gradient(circle, #f4f0d8 51%, transparent 53%);
+      background-size: 14px 28px;
+      background-repeat: repeat-y;
+      opacity: 0.85;
+      pointer-events: none;
+    }
+
+    .film-frame::before {
+      left: 2px;
+    }
+
+    .film-frame::after {
+      right: 2px;
+    }
+
+    .film-frame img {
+      display: block;
+      max-width: 100%;
+      height: auto;          /* Aspect Ratio bleibt erhalten */
+      object-fit: contain;   /* falls max-width kleiner als Bildabmessung */
+      border-radius: 4px;
+      background: #222;
+      filter: sepia(0.3) contrast(1.05) saturate(0.9);
     }
 
     .caption {
@@ -139,6 +153,10 @@
       text-align: center;
       color: #6b5540;
       letter-spacing: 0.04em;
+      background: rgba(255, 252, 240, 0.95);
+      padding: 0.4rem 0.6rem;
+      border-radius: 0 0 10px 10px;
+      border-top: 1px solid rgba(120, 90, 60, 0.3);
     }
 
     .title {
@@ -168,73 +186,65 @@
     <div class="parallax-bg"></div>
 
     <div class="title">
-      Vintage Gallery
-      <span>Scroll &amp; Drift</span>
+      Gallerie
     </div>
 
     <div class="scroll-container" id="gallery">
-      <!-- Du kannst diese Figure-Blöcke einfach beliebig oft kopieren -->
+      <!-- Beliebig viele items möglich, einfach kopieren -->
       <figure class="item">
-        <img src="images/landscapes/01.jpg" alt="Vintage Bild 1">
+        <div class="film-frame">
+          <img src="images/Landscapes/01.jpg" alt="Vintage Bild 1">
+        </div>
         <figcaption class="caption">Erinnerung #1</figcaption>
       </figure>
 
       <figure class="item">
-        <img src="images/landscapes/02.jpg" alt="Vintage Bild 2">
+        <div class="film-frame">
+          <img src="images/Landscapes/02.jpg" alt="Vintage Bild 2">
+        </div>
         <figcaption class="caption">Erinnerung #2</figcaption>
       </figure>
 
       <figure class="item">
-        <img src="images/landscapes/03.jpg" alt="Vintage Bild 3">
+        <div class="film-frame">
+          <img src="images/Landscapes/03.jpg" alt="Vintage Bild 3">
+        </div>
         <figcaption class="caption">Erinnerung #3</figcaption>
       </figure>
 
       <figure class="item">
-        <img src="images/landscapes/04.jpg" alt="Vintage Bild 4">
+        <div class="film-frame">
+          <img src="images/Landscapes/04.jpg" alt="Vintage Bild 4">
+        </div>
         <figcaption class="caption">Erinnerung #4</figcaption>
       </figure>
 
       <figure class="item">
-        <img src="images/landscapes/05.jpg" alt="Vintage Bild 5">
+        <div class="film-frame">
+          <img src="images/Landscapes/05.jpg" alt="Vintage Bild 5">
+        </div>
         <figcaption class="caption">Erinnerung #5</figcaption>
       </figure>
 
       <figure class="item">
-        <img src="images/landscapes/06.jpg" alt="Vintage Bild 6">
+        <div class="film-frame">
+          <img src="images/Landscapes/06.jpg" alt="Vintage Bild 6">
+        </div>
         <figcaption class="caption">Erinnerung #6</figcaption>
       </figure>
 
-      <!-- Mehr Bilder? Einfach weiter: -->
+      <!-- Weitere Bilder einfach anhängen -->
       <!--
       <figure class="item">
-        <img src="bild7.jpg" alt="Vintage Bild 7">
+        <div class="film-frame">
+          <img src="bild7.jpg" alt="Vintage Bild 7">
+        </div>
         <figcaption class="caption">Erinnerung #7</figcaption>
       </figure>
       -->
     </div>
   </div>
 
-  <script>
-	  const scrollContainer = document.getElementById('gallery');
-	  const parallaxBg = document.querySelector('.parallax-bg');
-
-	  function updateParallax() {
-		const scrollLeft = scrollContainer.scrollLeft;
-		const offset = scrollLeft * -0.2;
-		parallaxBg.style.transform = `translateX(${offset}px)`;
-	  }
-
-	  scrollContainer.addEventListener('scroll', updateParallax);
-	  updateParallax();
-
-	  // Mausrad vertikal -> horizontal scrollen
-	  scrollContainer.addEventListener('wheel', function(event) {
-		// Standard-Scrollen unterbinden (damit nicht die Seite versucht vertikal zu scrollen)
-		event.preventDefault();
-
-		// deltaY benutzen, um horizontal zu scrollen
-		scrollContainer.scrollLeft += event.deltaY;
-	  }, { passive: false });
-	</script>
+  
 </body>
 </html>
