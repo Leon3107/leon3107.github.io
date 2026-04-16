@@ -365,10 +365,12 @@ body {
         padding: 16px;
     }
 
-        .image-popover > .image-popover-content > #imagelarge {
+        #imagelarge {
             object-fit: contain;
-            width: calc(100%);
-            height: calc(100% - 48px);
+            width: calc(100dvw - 24px);
+            margin-left: 12px;
+            border-radius: 16px;
+            height: calc(100dvh - 48px);
             margin-top: 32px;
             margin-bottom: 32px;
         }

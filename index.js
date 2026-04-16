@@ -11,6 +11,7 @@ function closePopUp() {
 
 function openPopUp(source, description) {
     var popup = document.getElementById('gallery-popover');
+    var image = document.getElementById('imagelarge');
     popup.classList.add("active");
-
+    image.src = source;
 }
