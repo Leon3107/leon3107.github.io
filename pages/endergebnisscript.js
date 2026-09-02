@@ -60,12 +60,5 @@ function render() {
   ctx.shadowOffsetX = 10;
   ctx.shadowOffsetY = 10;
   ctx.fillText(day, x+299, y-406);
-  
-}
-
-function downloadImage() {
-  const link = document.createElement('a');
-  link.download = 'ergebnis.png';
-  link.href = canvas.toDataURL('image/png');
-  link.click();
+  prepareCanvasDownload(canvas, 'ergebnis.png');
 }

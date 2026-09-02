@@ -61,12 +61,5 @@ function render() {
   ctx.fillText(where, x + 280, 500);
   ctx.fillText(date, x + 280, 590);
   ctx.fillText(when, x + 280, 680);
-  
-}
-
-function downloadImage() {
-  const link = document.createElement('a');
-  link.download = 'ankuendigung.png';
-  link.href = canvas.toDataURL('image/png');
-  link.click();
+  prepareCanvasDownload(canvas, 'ankuendigung.png');
 }

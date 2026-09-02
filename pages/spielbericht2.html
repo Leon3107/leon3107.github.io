@@ -20,7 +20,7 @@
       width: auto;
       height: calc(100vh - 400px);
     }
-    button, select {
+    button, .download-button, select {
       margin-top: 1rem;
 	  border-radius: 8px;
 	  color: white;
@@ -33,6 +33,16 @@
 	  width: 128px;
 	  filter: drop-shadow(2px 2px 3px black);
     }
+	.download-button {
+	  display: inline-block;
+	  box-sizing: border-box;
+	  text-decoration: none;
+	  cursor: pointer;
+	}
+	.download-button[aria-disabled="true"] {
+	  pointer-events: none;
+	  opacity: 0.6;
+	}
 	input, textarea {
       margin-top: 1rem;
 	  border-radius: 8px;
@@ -111,11 +121,12 @@
   </div>
   <br />
   <button onclick="render()">Erstellen</button>
-  <button onclick="downloadImage()">Herunterladen</button>
+  <a id="download-link" class="download-button" download="bericht.png" aria-disabled="true">Herunterladen</a>
   <br /><br />
 
   <canvas id="canvas" width="794" height="1000"></canvas>
 
+  <script src="canvas-download.js"></script>
   <script src="spielberichtscript2.js"></script>
 
 </body>

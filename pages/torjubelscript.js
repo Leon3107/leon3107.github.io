@@ -60,11 +60,5 @@ function render() {
   ctx.fillText(text, 0, 0);
 
   ctx.restore();
-}
-
-function downloadImage() {
-  const link = document.createElement('a');
-  link.download = 'jubel.png';
-  link.href = canvas.toDataURL('image/png');
-  link.click();
+  prepareCanvasDownload(canvas, 'jubel.png');
 }
