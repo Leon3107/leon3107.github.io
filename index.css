@@ -39,11 +39,55 @@ progress::-moz-progress-bar {
 }
 
 html {
-    font-family: Poppins;
+    font-family: Poppins, sans-serif;
     scroll-behavior: smooth;
     -webkit-user-select: none;
     -ms-user-select: none;
     user-select: none;
+}
+
+body {
+    font-size: 1rem;
+    line-height: 1.65;
+}
+
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    box-sizing: border-box;
+    min-height: 48px;
+    padding: 13px 20px 13px 24px;
+    border: none;
+    border-radius: 12px;
+    font: inherit;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    line-height: 1.3;
+    cursor: pointer;
+    transition: background-color 0.2s, box-shadow 0.2s, transform 0.2s;
+}
+
+.button-arrow {
+    font-family: Arial, sans-serif;
+    font-size: 1.25rem;
+    line-height: 1;
+    transition: transform 0.2s;
+}
+
+.button:hover .button-arrow {
+    transform: translate(2px, -2px);
+}
+
+.button:focus-visible,
+button:focus-visible {
+    outline: 3px solid #005e8d;
+    outline-offset: 4px;
+}
+
+.button:active {
+    transform: translateY(1px);
 }
 .quiz-button{
     border: none;
@@ -99,6 +143,15 @@ body:has(#gallery-popover.active) {
         color: white;
         cursor: pointer;
         font-size: 2rem;
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        line-height: 1;
+        transition: background-color 0.2s;
+    }
+
+    #gallery-popover .close-button:hover {
+        background-color: #ffffff26;
     }
 
 h1 {
@@ -111,7 +164,9 @@ h1 {
 
 h2 {
     font-family: Poppins;
-    font-size: 2.1rem;
+    font-size: clamp(1.35rem, 1rem + 1vw, 1.85rem);
+    line-height: 1.25;
+    font-weight: 600;
     padding: 0px;
     margin: 0px;
 }
@@ -132,7 +187,8 @@ h2 {
     font-weight: 600;
     color: black;
     height: 230px;
-    font-size: 1.17em;
+    font-size: clamp(0.9rem, 0.85rem + 0.2vw, 1rem);
+    line-height: 1.5;
 }
 
     .equipment-item > div {
@@ -147,6 +203,7 @@ h2 {
             position: absolute;
             bottom: 0px;
             left: 16px;
+            right: 16px;
         }
 
         .equipment-item > div > img {
@@ -284,20 +341,8 @@ body {
     pointer-events: none;
 }
 
-    .title-on-hover .text-hidden h5 {
-        margin-top: 0px;
-    }
-
-
-    .title-on-hover .text-hidden h3 {
-        margin-bottom: 4px;
-    }
-
-.title-on-hover img:hover ~ .text-hidden {
-    opacity: 1;
-}
-
-.title-on-hover img:focus ~ .text-hidden {
+.title-on-hover:hover .text-hidden,
+.title-on-hover:focus-within .text-hidden {
     opacity: 1;
 }
 
@@ -329,6 +374,9 @@ body {
 
     .theme-item h3 {
         pointer-events: none;
+        font-size: clamp(1rem, 0.9rem + 0.35vw, 1.25rem);
+        font-weight: 600;
+        line-height: 1.3;
     }
 
     .theme-item img {
@@ -386,16 +434,35 @@ body {
 
     .gallery-item .text-hidden {
         position: absolute;
-		height: 128px;
-		background: linear-gradient(0deg, black, transparent);
+        box-sizing: border-box;
+        min-height: 45%;
+		background: linear-gradient(0deg, #000000d9, #00000066 65%, transparent);
         bottom: 0px;
         left: 0;
-		padding: 32px;
+		padding: 40px clamp(16px, 2vw, 28px) 24px;
         right: 0;
 		align-content: end;
     }
-    .gallery-item .text-hidden h5{
-		margin-bottom: 0;
+    .gallery-item .text-hidden h3 {
+        margin: 0 0 6px;
+        font-size: clamp(1.1rem, 0.95rem + 0.5vw, 1.5rem);
+        font-weight: 600;
+        line-height: 1.3;
+        overflow-wrap: anywhere;
+    }
+
+    .gallery-item .text-hidden h5 {
+        margin: 0;
+        font-size: clamp(0.75rem, 0.7rem + 0.2vw, 0.875rem);
+        font-weight: 400;
+        line-height: 1.6;
+        color: #ffffffd9;
+    }
+
+    @media (hover: none) {
+        .gallery-item .text-hidden {
+            opacity: 1;
+        }
     }
 
     .gallery-item img {
@@ -466,18 +533,21 @@ body:has(input:checked) .hero{
         position: absolute;
     }
 	
-	.hero button{
-		border-radius: 6px;
-		padding: 6px 12px;
-		color: #005e8d;
-		position: relative;
-		background-color: white;
-		filter: drop-shadow(4px 4px 4px #00000055);
+	.hero .button {
+		color: #1c292d;
+		background-color: #f3eee5;
+        margin-bottom: clamp(16px, 2vw, 28px);
+        box-shadow: 0 4px 14px #00000040;
 	}
 	
-	.hero button:hover{
-		border-color:  #ffffffaa;
+	.hero .button:hover {
+        background-color: #fffaf2;
+        box-shadow: 0 6px 20px #00000050;
 	}
+
+    .hero .button:focus-visible {
+        outline-color: white;
+    }
 	
 	.hero p{
 		margin: 0px;
@@ -488,7 +558,9 @@ body:has(input:checked) .hero{
         font-weight: 100;
 		font-style: italic;
 		color: #ffffff;
-		opacity: 0.7;
+        font-size: clamp(0.875rem, 0.8rem + 0.25vw, 1.0625rem);
+        line-height: 1.5;
+		opacity: 0.85;
 		transition: opacity 0.2s;
 	}
 
@@ -502,9 +574,17 @@ body:has(input:checked) .hero{
 
 .dynamic-header{
 	text-align: center;
+    font-size: clamp(1.75rem, 1.25rem + 1.5vw, 3rem);
+    font-weight: 500;
+    line-height: 1.2;
+    margin: 0;
 }
 .dynamic-text{
 	text-align: center;
+    font-size: clamp(1rem, 0.95rem + 0.2vw, 1.125rem);
+    line-height: 1.8;
+    max-width: 70ch;
+    margin: 20px auto 0;
 }
 
 .header-line{
@@ -525,10 +605,6 @@ body:has(input:checked) .hero{
         width: 25%;
     }
 
-    .dynamic-text {
-        font-size: 1.1rem;
-    }
-
 	.hero{
 		height: 100vh;
 	}
@@ -536,26 +612,6 @@ body:has(input:checked) .hero{
     .hero div {
 		left: 256px;
         bottom: 96px;
-    }
-
-    .hero h1 {
-        font-size: 1.2rem;
-    }
-
-    .hero .h4 {
-        font-size: 2rem;
-    }
-
-    .hero button {
-		margin-bottom: 32px;
-    }
-
-
-    .dynamic-header {
-        font-size: 4rem;
-        font-family: Poppins;
-        padding: 0px;
-        margin: 0px;
     }
 
     .theme-item {
@@ -577,10 +633,6 @@ body:has(input:checked) .hero{
 		height: 100vh;
 	}
 
-    .dynamic-text {
-        font-size: 1.1rem;
-    }
-
     .equipment-item {
         width: 25%;
     }
@@ -588,27 +640,6 @@ body:has(input:checked) .hero{
     .hero div {
 		left: 180px;
         bottom: 64px;
-    }
-
-
-    .hero h1 {
-        font-size: 1.1rem;
-    }
-
-    .hero .h4 {
-        font-size: 1.7rem;
-    }
-
-    .hero button {
-		margin-bottom: 32px;
-    }
-
-
-    .dynamic-header {
-        font-size: 3.3rem;
-        font-family: Poppins;
-        padding: 0px;
-        margin: 0px;
     }
 
     #imagepopover {
@@ -638,10 +669,6 @@ body:has(input:checked) .hero{
         display: none !important;
     }
 
-    .dynamic-text {
-        font-size: 1.0rem;
-    }
-
     .equipment-item {
         width: 50%;
     }
@@ -649,27 +676,6 @@ body:has(input:checked) .hero{
     .hero div {
 		left: 96px;
         bottom: 48px;
-    }
-
-    .hero h1 {
-        font-size: 1rem;
-    }
-
-    .hero .h4 {
-        font-size: 1.5rem;
-    }
-
-
-    .hero button {
-		margin-bottom: 16px;
-    }
-
-
-    .dynamic-header {
-        font-size: 3rem;
-        font-family: Poppins;
-        padding: 0px;
-        margin: 0px;
     }
 
     .theme-item {
@@ -687,10 +693,6 @@ body:has(input:checked) .hero{
         padding-right: 48px;
     }
 
-    .dynamic-text {
-        font-size: 1.0rem;
-    }
-
     .equipment-item {
         width: 100%;
     }
@@ -702,27 +704,6 @@ body:has(input:checked) .hero{
     .hero div {
 		left: 48px;
         bottom: 32px;
-    }
-
-    .hero h1 {
-        font-size: 1em;
-    }
-
-
-    .hero .h4 {
-        font-size: 1.2rem;
-    }
-
-
-    .hero button {
-		margin-bottom: 16px;
-    }
-
-    .dynamic-header {
-        font-size: 2.4rem;
-        font-family: Poppins;
-        padding: 0px;
-        margin: 0px;
     }
 
     .distribute {
@@ -753,7 +734,6 @@ body:has(input:checked) .hero{
     animation: slide-out-right 0.3s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
 }
 
-
 #scroll-to-top {
     display: none;
     position: fixed;
@@ -782,7 +762,6 @@ body:has(input:checked) .hero{
     #scroll-to-top:hover {
         background-color: #333;
     }
-
 
 @-webkit-keyframes slide-out-right {
     0% {
@@ -825,7 +804,6 @@ body:has(input:checked) .hero{
         opacity: 1;
     }
 }
-
 
 @keyframes slide-in-right {
     0% {
