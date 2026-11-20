@@ -408,12 +408,12 @@ html:has(.gallery-dialog[open]) {
     overscroll-behavior: contain;
     border: 0;
     border-radius: 0;
-    color: #f5f5f5;
+    background-color: white;
+    color: #191919;
 }
 
-.gallery-dialog,
 .gallery-dialog::backdrop {
-    background-color: #111;
+    background-color: #000b;
 }
 
 .gallery-dialog[open] {
@@ -448,8 +448,12 @@ html:has(.gallery-dialog[open]) {
     font-variant-numeric: tabular-nums;
 }
 
+.gallery-dialog-position,
+.gallery-dialog-settings dt {
+    color: #5b5b5b;
+}
+
 .gallery-dialog-position {
-    color: #b8b8b8;
     font-size: 0.8125rem;
 }
 
@@ -474,7 +478,7 @@ html:has(.gallery-dialog[open]) {
     padding: 0;
     border: 0;
     border-radius: 0;
-    background-color: #111d;
+    background: none;
     color: inherit;
     cursor: pointer;
 }
@@ -486,11 +490,11 @@ html:has(.gallery-dialog[open]) {
 
 .gallery-dialog-button:hover:not(:disabled),
 .gallery-dialog-button:active:not(:disabled) {
-    background-color: #2a2a2a;
+    background-color: #e8e8e8;
 }
 
 .gallery-dialog-button:focus-visible {
-    outline: 2px solid #f5f5f5;
+    outline: 2px solid currentColor;
     outline-offset: -2px;
 }
 
@@ -507,6 +511,7 @@ html:has(.gallery-dialog[open]) {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
+    background-color: white;
 }
 
 .gallery-dialog-navigation::before {
@@ -539,7 +544,7 @@ html:has(.gallery-dialog[open]) {
     gap: 8px 16px;
     margin: 0;
     padding: 12px 16px;
-    border-top: 1px solid #ffffff30;
+    border-top: 1px solid #ddd;
 }
 
 .gallery-dialog-settings div {
@@ -552,7 +557,6 @@ html:has(.gallery-dialog[open]) {
 
 .gallery-dialog-settings dt {
     position: relative;
-    color: #b8b8b8;
     font-size: 0.75rem;
     line-height: 1.4;
     overflow-wrap: anywhere;
